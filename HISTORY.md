@@ -2,8 +2,10 @@
 
 ##### Dependencies
 
+- vite@latest
 - prettier
 - @trivago/prettier-plugin-sort-imports
+- @eslint/config@latest
 
 ##### Dev Dependencies
 
@@ -53,7 +55,7 @@ notepad .gitignore
 echo. > .gitattributes
 ```
 
-Prettier Command 설정
+Prettier Script 설정
 
 ```cmd
 notepad package.json
@@ -61,4 +63,39 @@ notepad package.json
 
 ```cmd
 npm run prettier
+```
+
+### 0-2. Configuring ESLint
+
+ESLint init
+
+- To check syntax and find problems
+- JavaScript modules (import/export)
+- React
+- Typescript
+- Browser
+- eslint, globals, @eslint/js, typescript-eslint, eslint-plugin-react
+
+```cmd
+npm init @eslint/config@latest
+```
+
+```cmd
+npm install --save-dev eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-config-prettier
+```
+
+ESLint 설정
+
+```cmd
+notepad eslint.config.js
+```
+
+ESLint Script 수정
+
+```cmd
+notepad package.json
+```
+
+```cmd
+npm run lint
 ```
