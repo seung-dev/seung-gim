@@ -131,5 +131,5 @@ git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks com
 ```
 
 ```cmd
-git push -v origin loc/setup:loc/setup
+git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks push -v --set-upstream origin loc/setup:loc/setup
 ```
