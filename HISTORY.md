@@ -6,6 +6,12 @@
 - prettier
 - @trivago/prettier-plugin-sort-imports
 - @eslint/config@latest
+- eslint-plugin-jsx-a11y
+- eslint-plugin-prettier
+- eslint-config-prettier
+- husky
+- @types/node
+- vite-tsconfig-paths
 
 ##### Dev Dependencies
 
@@ -132,4 +138,20 @@ git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks com
 
 ```cmd
 git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks push -v --set-upstream origin loc/setup:loc/setup
+```
+
+### 0-4. Configuring Path Alias
+
+```cmd
+npm install --save-dev vite-tsconfig-paths
+```
+
+Path 설정
+
+```cmd
+notepad vite.config.ts
+```
+
+```cmd
+notepad tsconfig.app.json
 ```

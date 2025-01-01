@@ -17,10 +17,13 @@
 
 		/* Linting */
 		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUncheckedSideEffectImports": true
+		// "noUnusedLocals": true,
+		// "noUnusedParameters": true,
+		// "noFallthroughCasesInSwitch": true,
+		// "noUncheckedSideEffectImports": true
+
+		"baseUrl": ".",
+		"paths": { "@/*": ["src/*"] }
 	},
 	"include": ["src"]
 }
