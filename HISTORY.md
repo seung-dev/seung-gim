@@ -12,6 +12,8 @@
 - husky
 - @types/node
 - vite-tsconfig-paths
+- @types/node
+- vite-plugin-dts
 
 ##### Dev Dependencies
 
@@ -154,4 +156,24 @@ notepad vite.config.ts
 
 ```cmd
 notepad tsconfig.app.json
+```
+
+### 0-5. Configuring NPM Library
+
+```cmd
+npm install --save-dev @types/node vite-plugin-dts
+```
+
+Library 설정
+
+```cmd
+notepad vite.config.ts
+```
+
+```cmd
+notepad tsconfig.app.json
+```
+
+```cmd
+notepad package.json
 ```

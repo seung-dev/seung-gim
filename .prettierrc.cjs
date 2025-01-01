@@ -18,6 +18,7 @@ module.exports = {
 		"^vite",
 		"^vite(.*)$",
 		"^@vite(.*)$",
+		"^path",
 		"^react$",
 		"^react-dom$",
 		"^react-router-dom$",
