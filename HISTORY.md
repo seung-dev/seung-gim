@@ -99,3 +99,37 @@ notepad package.json
 ```cmd
 npm run lint
 ```
+
+### 0-3. Configuring Husky
+
+```cmd
+npm install --save-dev husky
+```
+
+```cmd
+npx husky init
+```
+
+```cmd
+echo "npm run prettier" > .husky\pre-commit
+```
+
+```cmd
+echo "npm run lint" > .husky\pre-push
+```
+
+```cmd
+git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks add .
+```
+
+```cmd
+git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks reset .
+```
+
+```cmd
+git -c diff.mnemonicprefix=false -c core.quotepath=false --no-optional-locks commit -m "feat: Configuring Husky"
+```
+
+```cmd
+git push -v origin loc/setup:loc/setup
+```
