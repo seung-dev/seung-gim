@@ -1,0 +1,29 @@
+{
+	"error": {
+		"title": "An error occurred.",
+		"message": "We have encountered a system error while processing your request. We apologize for the inconvenience. Please check URL and try again.",
+		"button": "Go to home"
+	},
+	"messages": {
+		"copied": "Copied!"
+	},
+	"labels": {
+		"buttons": {
+			"yes": "Yes",
+			"no": "No",
+			"ok": "OK",
+			"cancel": "Cancel",
+			"open": "Open",
+			"close": "Close",
+			"save": "Save",
+			"delete": "Delete",
+			"search": "Search",
+			"add": "Add",
+			"edit": "Edit",
+			"remove": "Remove",
+			"copy": "Copy",
+			"reset": "Reset",
+			"update": "Update"
+		}
+	}
+}

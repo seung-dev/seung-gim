@@ -1,0 +1,446 @@
+@import url("/fonts/pretendard-gov.css");
+
+@import "@fontsource/roboto/300.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
+
+:root {
+	--s-font-ko:
+		"Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont,
+		system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+		"Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	--s-font-en:
+		Roboto, "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont,
+		system-ui, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+		"Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+/*
+@layer theme, base, mui, components, utilities;
+*/
+
+@import "tailwindcss";
+
+@layer utilities {
+	.s-locale-ko {
+		--default-font-family: var(--s-font-ko);
+	}
+	.s-locale-en {
+		--default-font-family: var(--s-font-en);
+	}
+	.s-font-ko {
+		font-family: var(--s-font-ko);
+	}
+	.s-font-en {
+		font-family: var(--s-font-en);
+	}
+	.s-full {
+		width: 100%;
+		height: 100%;
+	}
+	.s-height-xs {
+		height: var(--s-scale-xs);
+	}
+	.s-height-sm {
+		height: var(--s-scale-sm);
+	}
+	.s-height-md {
+		height: var(--s-scale-md);
+	}
+	.s-height-lg {
+		height: var(--s-scale-lg);
+	}
+	.s-height-xl {
+		height: var(--s-scale-xl);
+	}
+	.s-height-2xl {
+		height: var(--s-scale-2xl);
+	}
+	.s-width-xs {
+		width: var(--s-scale-xs);
+	}
+	.s-width-sm {
+		width: var(--s-scale-sm);
+	}
+	.s-width-md {
+		width: var(--s-scale-md);
+	}
+	.s-width-lg {
+		width: var(--s-scale-lg);
+	}
+	.s-width-xl {
+		width: var(--s-scale-xl);
+	}
+	.s-width-2xl {
+		width: var(--s-scale-2xl);
+	}
+	.s-square-xs {
+		width: var(--s-scale-xs);
+		height: var(--s-scale-xs);
+	}
+	.s-square-sm {
+		width: var(--s-scale-sm);
+		height: var(--s-scale-sm);
+	}
+	.s-square-md {
+		width: var(--s-scale-md);
+		height: var(--s-scale-md);
+	}
+	.s-square-lg {
+		width: var(--s-scale-lg);
+		height: var(--s-scale-lg);
+	}
+	.s-square-xl {
+		width: var(--s-scale-xl);
+		height: var(--s-scale-xl);
+	}
+	.s-square-2xl {
+		width: var(--s-scale-2xl);
+		height: var(--s-scale-2xl);
+	}
+	.s-font-xs {
+		font-size: var(--s-font-xs);
+	}
+	.s-font-sm {
+		font-size: var(--s-font-sm);
+	}
+	.s-font-md {
+		font-size: var(--s-font-md);
+	}
+	.s-font-lg {
+		font-size: var(--s-font-lg);
+	}
+	.s-font-xl {
+		font-size: var(--s-font-xl);
+	}
+	.s-font-2xl {
+		font-size: var(--s-font-2xl);
+	}
+	.s-font-3xl {
+		font-size: var(--s-font-3xl);
+	}
+	.s-font-4xl {
+		font-size: var(--s-font-4xl);
+	}
+	.s-font-5xl {
+		font-size: var(--s-font-5xl);
+	}
+	.s-font-6xl {
+		font-size: var(--s-font-6xl);
+	}
+	.s-lucide-xs > .lucide {
+		width: var(--s-font-xs);
+		height: var(--s-font-xs);
+	}
+	.s-lucide-sm > .lucide {
+		width: var(--s-font-sm);
+		height: var(--s-font-sm);
+	}
+	.s-lucide-md > .lucide {
+		width: var(--s-font-md);
+		height: var(--s-font-md);
+	}
+	.s-lucide-lg > .lucide {
+		width: var(--s-font-lg);
+		height: var(--s-font-lg);
+	}
+	.s-lucide-xl > .lucide {
+		width: var(--s-font-xl);
+		height: var(--s-font-xl);
+	}
+	.s-lucide-2xl > .lucide {
+		width: var(--s-font-2xl);
+		height: var(--s-font-2xl);
+	}
+	.s-lucide-3xl > .lucide {
+		width: var(--s-font-3xl);
+		height: var(--s-font-3xl);
+	}
+	.s-lucide-4xl > .lucide {
+		width: var(--s-font-4xl);
+		height: var(--s-font-4xl);
+	}
+	.s-lucide-5xl > .lucide {
+		width: var(--s-font-5xl);
+		height: var(--s-font-5xl);
+	}
+	.s-lucide-6xl > .lucide {
+		width: var(--s-font-6xl);
+		height: var(--s-font-6xl);
+	}
+	.s-button-xs {
+		height: var(--s-scale-xs);
+		padding-inline: calc(var(--s-scale-xs) * 0.5);
+	}
+	.s-button-xs > .s-button-label {
+		line-height: initial;
+		font-size: var(--s-font-xs);
+	}
+	.s-button-sm {
+		height: var(--s-scale-sm);
+		padding-inline: calc(var(--s-scale-sm) * 0.5);
+	}
+	.s-button-sm > .s-button-label {
+		line-height: initial;
+		font-size: var(--s-font-sm);
+	}
+	.s-button-md {
+		height: var(--s-scale-md);
+		padding-inline: calc(var(--s-scale-md) * 0.5);
+	}
+	.s-button-md > .s-button-label {
+		line-height: initial;
+		font-size: var(--s-font-md);
+	}
+	.s-button-lg {
+		height: var(--s-scale-lg);
+		padding-inline: calc(var(--s-scale-lg) * 0.5);
+	}
+	.s-button-lg > .s-button-label {
+		line-height: initial;
+		font-size: var(--s-font-lg);
+	}
+	.s-button-xl {
+		height: var(--s-scale-xl);
+		padding-inline: calc(var(--s-scale-xl) * 0.5);
+	}
+	.s-button-xl > .s-button-label {
+		line-height: initial;
+		font-size: var(--s-font-xl);
+	}
+	.s-button-2xl {
+		height: var(--s-scale-2xl);
+		padding-inline: calc(var(--s-scale-2xl) * 0.5);
+	}
+	.s-button-2xl > .s-button-label {
+		line-height: initial;
+		font-size: var(--s-font-2xl);
+	}
+	.s-button-icon-xs > .lucide {
+		width: var(--s-font-xs);
+		height: var(--s-font-xs);
+		color: inherit;
+	}
+	.s-button-icon-sm > .lucide {
+		width: var(--s-font-sm);
+		height: var(--s-font-sm);
+		color: inherit;
+	}
+	.s-button-icon-md > .lucide {
+		width: var(--s-font-md);
+		height: var(--s-font-md);
+		color: inherit;
+	}
+	.s-button-icon-lg > .lucide {
+		width: var(--s-font-lg);
+		height: var(--s-font-lg);
+		color: inherit;
+	}
+	.s-button-icon-xl > .lucide {
+		width: var(--s-font-xl);
+		height: var(--s-font-xl);
+		color: inherit;
+	}
+	.s-button-icon-2xl > .lucide {
+		width: var(--s-font-2xl);
+		height: var(--s-font-2xl);
+		color: inherit;
+	}
+	.s-button-icon-3xl > .lucide {
+		width: var(--s-font-3xl);
+		height: var(--s-font-3xl);
+		color: inherit;
+	}
+	.s-button-icon-4xl > .lucide {
+		width: var(--s-font-4xl);
+		height: var(--s-font-4xl);
+		color: inherit;
+	}
+	.s-button-icon-5xl > .lucide {
+		width: var(--s-font-5xl);
+		height: var(--s-font-5xl);
+		color: inherit;
+	}
+	.s-button-icon-6xl > .lucide {
+		width: var(--s-font-6xl);
+		height: var(--s-font-6xl);
+		color: inherit;
+	}
+	.s-input-root input {
+		padding-inline: calc(var(--s-unit) * 8);
+	}
+	.s-select-xs input,
+	.s-input-xs input {
+		height: var(--s-scale-xs);
+		font-size: var(--s-font-xs);
+	}
+	.s-input-xs .s-input-prefix {
+		padding-right: calc(var(--s-unit) * 8);
+	}
+	.s-input-xs .s-input-suffix {
+		padding-left: calc(var(--s-unit) * 8);
+	}
+	.s-input-xs .lucide {
+		width: var(--s-font-xs);
+		height: var(--s-font-xs);
+	}
+	.s-select-sm input,
+	.s-input-sm input {
+		height: var(--s-scale-sm);
+		font-size: var(--s-font-sm);
+	}
+	.s-input-sm .s-input-prefix {
+		padding-right: calc(var(--s-unit) * 8);
+	}
+	.s-input-sm .s-input-suffix {
+		padding-left: calc(var(--s-unit) * 8);
+	}
+	.s-input-sm .lucide {
+		width: var(--s-font-sm);
+		height: var(--s-font-sm);
+	}
+	.s-select-md input,
+	.s-input-md input {
+		height: var(--s-scale-md);
+		font-size: var(--s-font-md);
+	}
+	.s-input-md .s-input-prefix {
+		padding-right: calc(var(--s-unit) * 8);
+	}
+	.s-input-md .s-input-suffix {
+		padding-left: calc(var(--s-unit) * 8);
+	}
+	.s-input-md .lucide {
+		width: var(--s-font-md);
+		height: var(--s-font-md);
+	}
+	.s-select-lg input,
+	.s-input-lg input {
+		height: var(--s-scale-lg);
+		font-size: var(--s-font-lg);
+	}
+	.s-input-lg .s-input-prefix {
+		padding-right: calc(var(--s-unit) * 8);
+	}
+	.s-input-lg .s-input-suffix {
+		padding-left: calc(var(--s-unit) * 8);
+	}
+	.s-input-lg .lucide {
+		width: var(--s-font-lg);
+		height: var(--s-font-lg);
+	}
+	.s-select-xl input,
+	.s-input-xl input {
+		height: var(--s-scale-xl);
+		font-size: var(--s-font-xl);
+	}
+	.s-input-xl .s-input-prefix {
+		padding-right: calc(var(--s-unit) * 8);
+	}
+	.s-input-xl .s-input-suffix {
+		padding-left: calc(var(--s-unit) * 8);
+	}
+	.s-input-xl .lucide {
+		width: var(--s-font-xl);
+		height: var(--s-font-xl);
+	}
+	.s-select-2xl input,
+	.s-input-2xl input {
+		height: var(--s-scale-2xl);
+		font-size: var(--s-font-2xl);
+	}
+	.s-input-2xl .s-input-prefix {
+		padding-right: calc(var(--s-unit) * 8);
+	}
+	.s-input-2xl .s-input-suffix {
+		padding-left: calc(var(--s-unit) * 8);
+	}
+	.s-input-2xl .lucide {
+		width: var(--s-font-2xl);
+		height: var(--s-font-2xl);
+	}
+	.s-select-root input {
+		padding-left: calc(var(--s-unit) * 8);
+		padding-right: calc(var(--s-unit) * 16);
+	}
+	.s-datepicker-root > div {
+		padding-right: calc(var(--s-unit) * 8);
+	}
+	.s-datepicker-root > div > div {
+		align-items: center;
+		justify-content: center;
+	}
+	.s-datepicker-root span {
+		line-height: initial;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.s-datepicker-xs {
+		width: calc(var(--s-font-xs) * 10);
+	}
+	.s-datepicker-xs span {
+		height: var(--s-scale-xs);
+		font-size: var(--s-font-xs);
+	}
+	.s-datepicker-xs svg {
+		width: calc(var(--s-font-xs) * 1.5);
+		height: calc(var(--s-font-xs) * 1.5);
+	}
+	.s-datepicker-sm {
+		width: calc(var(--s-font-sm) * 10);
+	}
+	.s-datepicker-sm span {
+		height: var(--s-scale-sm);
+		font-size: var(--s-font-sm);
+	}
+	.s-datepicker-sm svg {
+		width: calc(var(--s-font-sm) * 1.5);
+		height: calc(var(--s-font-sm) * 1.5);
+	}
+	.s-datepicker-md {
+		width: calc(var(--s-font-md) * 10);
+	}
+	.s-datepicker-md span {
+		height: var(--s-scale-md);
+		font-size: var(--s-font-md);
+	}
+	.s-datepicker-md svg {
+		width: calc(var(--s-font-md) * 1.5);
+		height: calc(var(--s-font-md) * 1.5);
+	}
+	.s-datepicker-lg {
+		width: calc(var(--s-font-lg) * 10);
+	}
+	.s-datepicker-lg span {
+		height: var(--s-scale-lg);
+		font-size: var(--s-font-lg);
+	}
+	.s-datepicker-lg svg {
+		width: calc(var(--s-font-lg) * 1.5);
+		height: calc(var(--s-font-lg) * 1.5);
+	}
+	.s-datepicker-xl {
+		width: calc(var(--s-font-xl) * 10);
+	}
+	.s-datepicker-xl span {
+		height: var(--s-scale-xl);
+		font-size: var(--s-font-xl);
+	}
+	.s-datepicker-xl svg {
+		width: calc(var(--s-font-xl) * 1.5);
+		height: calc(var(--s-font-xl) * 1.5);
+	}
+	.s-datepicker-2xl {
+		width: calc(var(--s-font-2xl) * 10);
+	}
+	.s-datepicker-2xl span {
+		height: var(--s-scale-2xl);
+		font-size: var(--s-font-2xl);
+	}
+	.s-datepicker-2xl svg {
+		width: calc(var(--s-font-2xl) * 1.5);
+		height: calc(var(--s-font-2xl) * 1.5);
+	}
+}

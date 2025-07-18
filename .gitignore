@@ -1,0 +1,19 @@
+# editor
+.vscode/*
+!.vscode/settings.json
+
+# dependencies
+node_modules
+
+# build
+dist
+build
+*.tsbuildinfo
+
+# logs
+logs
+*.log
+
+# misc
+.DS_Store
+.eslintcache
