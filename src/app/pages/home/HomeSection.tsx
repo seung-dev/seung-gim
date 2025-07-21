@@ -5,12 +5,12 @@ export interface HomeSectionProps extends SDivProps {
 }
 
 export const HomeSection = (args: HomeSectionProps) => {
-	const { className, children, styles, hero, ...misc } = args;
+	const { hero, styles = [], className, children, ...misc } = args;
 
 	return (
 		<SDiv
 			className="home-section-root"
-			styles={["py-12", hero ? "mt-[var(--s-header-height)]" : "", className, styles]}
+			styles={["py-12", hero && "mt-[var(--s-header-height)]", className, ...styles]}
 			{...misc}
 		>
 			<SContainer>{children}</SContainer>

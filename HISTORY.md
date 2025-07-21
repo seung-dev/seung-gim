@@ -189,7 +189,7 @@ font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMa
 ...
 ```
 
-##### Material UI
+##### Design
 
 ```
 npm install @mui/material @emotion/react @emotion/styled
@@ -218,8 +218,6 @@ npm install notistack
 ```
 npm install lucide-react
 ```
-
-##### Tailwind CSS
 
 ```
 npm install tailwindcss @tailwindcss/vite
@@ -269,4 +267,8 @@ npm install cripto-js
 
 ```
 npm install --save-dev @types/crypto-js
+```
+
+```
+npm install react-markdown
 ```

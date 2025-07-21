@@ -9,6 +9,7 @@ export const AppRoutes: SRouteProps<AppLayout>[] = [
 		layout: "home",
 		Component: HomeLayout,
 		children: [{ path: "/", Component: HomeT010000 }],
+		roles: ["*"],
 	},
 	{
 		layout: "home",

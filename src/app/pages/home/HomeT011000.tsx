@@ -1,7 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import { Smile } from "lucide-react";
 
+import { clipboard } from "@/app/seung/core";
 import {
 	SCard,
+	SCodeBlock,
 	SDiv,
 	type SFontWeightProps,
 	type SLocaleProps,
@@ -9,9 +13,22 @@ import {
 	type SScaleProps,
 	STypography,
 	useSStyles,
+	useSToastActions,
 } from "@/app/seung/design";
 
 import { HomeSection, type HomeSectionProps } from "./HomeSection";
+
+const code = `
+<STypography
+	// locale="ko"// ko(default), en
+	scale="md"// xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl
+	// weight="normal"// normal(default), medium, bold
+	// ellipsis// true, false(default)
+	// required// true, false(default)
+>
+	{message}
+</STypography>
+`;
 
 const message = "동해물과 백두산이 ABCDEFG abcdefg";
 
@@ -40,19 +57,35 @@ export const font_scales: SScaleProps[] = [
 export const HomeT011000 = (args: HomeSectionProps) => {
 	const { unit, ...styles } = useSStyles();
 
-	// const { t } = useTranslation();
+	const { t } = useTranslation();
 
-	// const { toast_open } = useSToastActions();
+	const { toast_open } = useSToastActions();
 
-	// const copy_typography = () => {
-	// 	clipboard("", () => {
-	// 		toast_open(t("messages.copied"));
-	// 	});
-	// };
+	const copy = async (value: string) => {
+		await clipboard(value, () => {
+			toast_open(t("messages.copied"));
+		});
+	};
 
 	return (
 		<HomeSection {...args}>
 			<SDiv styles={["flex flex-col gap-8"]}>
+				<SDiv>
+					<STypography
+						styles={["mb-4"]}
+						scale="2xl"
+						weight="bold"
+					>
+						{"Font"}
+					</STypography>
+					<SCodeBlock
+						dark
+						code={code}
+						onClick={async () => {
+							await copy(code);
+						}}
+					/>
+				</SDiv>
 				<SDiv>
 					<STypography
 						styles={["mb-4"]}

@@ -9,16 +9,16 @@ import {
 } from "./SStyles";
 
 export interface STypographyProps extends TypographyProps {
+	locale?: SLocaleProps;
 	styles?: SClassProps[];
 	scale?: SScaleProps;
 	weight?: SFontWeightProps;
 	ellipsis?: boolean;
 	required?: boolean;
-	locale?: SLocaleProps;
 }
 
 export const STypography = (args: STypographyProps) => {
-	const { styles, scale, weight, ellipsis, required, locale, className, children, ...misc } =
+	const { locale, styles, scale, weight, ellipsis, required, className, children, ...misc } =
 		args;
 
 	return (
@@ -26,12 +26,10 @@ export const STypography = (args: STypographyProps) => {
 			className={build_class(
 				"s-typography-root",
 				"leading-none",
-				// "[line-height:initial]",
-				"tracking-[var(--s-letter-spacing)]",
+				locale && `s-font-${locale}`,
 				scale && `s-font-${scale}`,
 				weight && `font-${weight}`,
 				ellipsis && "truncate",
-				locale && `s-font-${locale}`,
 				className,
 				styles,
 			)}

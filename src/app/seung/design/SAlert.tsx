@@ -85,14 +85,20 @@ export const SDialog = (args: SDialogProps) => {
 						{actions
 							?.filter(({ position = "left" }) => position === "left")
 							.map(({ label }, i) => (
-								<SButton key={`alert-action-left-${i}`}>{label}</SButton>
+								<SButton
+									key={`alert-action-left-${i}`}
+									label={label}
+								/>
 							))}
 					</SDiv>
 					<SDiv>
 						{actions
 							?.filter(({ position = "right" }) => position === "right")
 							.map(({ label }, i) => (
-								<SButton key={`alert-action-right-${i}`}>{label}</SButton>
+								<SButton
+									key={`alert-action-right-${i}`}
+									label={label}
+								/>
 							))}
 					</SDiv>
 				</SDiv>

@@ -1,5 +1,6 @@
 import { Button, type ButtonProps } from "@mui/material";
 
+import { SLucide } from "./SLucide";
 import {
 	build_class,
 	SBackgroundPaint,
@@ -11,13 +12,14 @@ import {
 	type SScaleProps,
 } from "./SStyles";
 
-export interface SButtonProps extends ButtonProps {
+export interface SButtonProps extends Omit<ButtonProps, "children"> {
 	styles?: SClassProps[];
 	contained?: SBackgroundPaintProps;
 	outlined?: SOutlinePaintProps;
 	rounded?: SBorderRadiusProps;
 	scale?: SScaleProps;
 	ellipsis?: boolean;
+	label: string;
 }
 
 export const SButton = (args: SButtonProps) => {
@@ -28,8 +30,9 @@ export const SButton = (args: SButtonProps) => {
 		rounded,
 		scale,
 		ellipsis,
+		label,
 		className,
-		children,
+		startIcon,
 		...misc
 	} = args;
 
@@ -37,6 +40,7 @@ export const SButton = (args: SButtonProps) => {
 		<Button
 			className={build_class(
 				"s-button-root",
+				"gap-2",
 				"normal-case",
 				rounded && `rounded-${rounded}`,
 				scale && `s-button-${scale}`,
@@ -47,7 +51,13 @@ export const SButton = (args: SButtonProps) => {
 			)}
 			{...misc}
 		>
-			<span className={`s-button-label${ellipsis ? " truncate" : ""}`}>{children}</span>
+			{startIcon && (
+				<SLucide
+					scale={scale}
+					icon={startIcon}
+				/>
+			)}
+			<span className={`s-button-label${ellipsis ? " truncate" : ""}`}>{label}</span>
 		</Button>
 	);
 };

@@ -38,15 +38,14 @@ export const HomeLayout = () => {
 						]}
 						Action={
 							<SButton
-								styles={["bg-blue-700 hover:bg-blue-800 text-white"]}
+								contained="blue"
 								rounded="full"
 								scale="sm"
+								label={"관리자 [Admin]"}
 								onClick={async () => {
 									await move_to_signin();
 								}}
-							>
-								{"관리자 [Admin]"}
-							</SButton>
+							/>
 						}
 					/>
 				}

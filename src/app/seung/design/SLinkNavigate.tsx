@@ -2,17 +2,23 @@ import { useNavigate } from "react-router";
 
 import { Link, type LinkProps } from "@mui/material";
 
-import { build_class, type SClassProps, type SScaleProps } from "./SStyles";
+import {
+	build_class,
+	type SClassProps,
+	type SFontWeightProps,
+	type SScaleProps,
+} from "./SStyles";
 
 interface SLinkNavigateProps extends Omit<LinkProps, "href" | "target" | "rel"> {
 	styles?: SClassProps[];
 	scale?: SScaleProps;
+	weight?: SFontWeightProps;
 	to?: string;
 	replace?: boolean;
 }
 
 export const SLinkNavigate = (args: SLinkNavigateProps) => {
-	const { styles, scale, to, replace, className, underline, ...misc } = args;
+	const { styles, scale, weight, to, replace, className, underline, ...misc } = args;
 
 	const navigate = useNavigate();
 
@@ -30,6 +36,7 @@ export const SLinkNavigate = (args: SLinkNavigateProps) => {
 				"[line-height:initial]",
 				"cursor-pointer",
 				scale && `s-font-${scale}`,
+				weight && `font-${weight}`,
 				underline === "always"
 					? "underline underline-offset-2"
 					: underline === "hover"

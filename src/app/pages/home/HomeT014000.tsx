@@ -49,10 +49,8 @@ export const HomeT014000 = (args: HomeSectionProps) => {
 										<SButton
 											contained="blue"
 											scale={scale}
-											rounded="lg"
-										>
-											{`s-button-${scale}`}
-										</SButton>
+											label={`s-button-${scale}`}
+										/>
 										<SInput
 											styles={["w-64"]}
 											scale={scale}

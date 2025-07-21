@@ -10,10 +10,7 @@
 		"Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont,
 		system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
 		"Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	--s-font-en:
-		Roboto, "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont,
-		system-ui, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
-		"Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	--s-font-en: Roboto, sans-serif;
 }
 
 /*
@@ -190,7 +187,7 @@
 		padding-inline: calc(var(--s-scale-md) * 0.5);
 	}
 	.s-button-md > .s-button-label {
-		line-height: initial;
+		/* line-height: initial; */
 		font-size: var(--s-font-md);
 	}
 	.s-button-lg {
@@ -198,7 +195,7 @@
 		padding-inline: calc(var(--s-scale-lg) * 0.5);
 	}
 	.s-button-lg > .s-button-label {
-		line-height: initial;
+		/* line-height: initial; */
 		font-size: var(--s-font-lg);
 	}
 	.s-button-xl {
