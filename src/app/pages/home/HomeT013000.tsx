@@ -98,7 +98,7 @@ export const HomeT013000 = (args: HomeSectionProps) => {
 										scale !== "6xl",
 								)
 								.map((scale, i) => {
-									const rem = styles[`scale_${scale}`];
+									const rem = styles[`height_${scale}`];
 									return (
 										<SDiv
 											key={`button-scale-${i}`}
@@ -233,9 +233,8 @@ export const HomeT013000 = (args: HomeSectionProps) => {
 														key={`button-icon-${i}-${j}`}
 														scale={scale}
 														paint={`text-blue-${value} hover:text-blue-${value + 100}`}
-													>
-														<Smile />
-													</SButtonIcon>
+														LucideIcon={Smile}
+													/>
 												))}
 											</SDiv>
 										</SDiv>

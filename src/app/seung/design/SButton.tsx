@@ -1,6 +1,10 @@
+import type { ElementType } from "react";
+
+import type { LucideProps } from "lucide-react";
+
 import { Button, type ButtonProps } from "@mui/material";
 
-import { SLucide } from "./SLucide";
+import { SLucideIcon } from "./SLucideIcon";
 import {
 	build_class,
 	SBackgroundPaint,
@@ -20,6 +24,7 @@ export interface SButtonProps extends Omit<ButtonProps, "children"> {
 	scale?: SScaleProps;
 	ellipsis?: boolean;
 	label: string;
+	LucideIcon?: ElementType<LucideProps>;
 }
 
 export const SButton = (args: SButtonProps) => {
@@ -31,8 +36,8 @@ export const SButton = (args: SButtonProps) => {
 		scale,
 		ellipsis,
 		label,
+		LucideIcon,
 		className,
-		startIcon,
 		...misc
 	} = args;
 
@@ -51,10 +56,10 @@ export const SButton = (args: SButtonProps) => {
 			)}
 			{...misc}
 		>
-			{startIcon && (
-				<SLucide
+			{LucideIcon && (
+				<SLucideIcon
 					scale={scale}
-					icon={startIcon}
+					LucideIcon={LucideIcon}
 				/>
 			)}
 			<span className={`s-button-label${ellipsis ? " truncate" : ""}`}>{label}</span>

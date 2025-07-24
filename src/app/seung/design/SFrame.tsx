@@ -12,13 +12,12 @@ import {
 	ThemeProvider,
 } from "@mui/material";
 
-import { SLocale, type SLocaleProps } from "./SLocale";
+import { SLocale } from "./SLocale";
 import { useSStylesActions } from "./SStyles";
 import { SToast } from "./SToast";
 
 interface SFrameProps {
 	theme: Theme;
-	locale?: SLocaleProps;
 	snackbar?: SnackbarProviderProps;
 	router?: {
 		basename?: string;
@@ -30,7 +29,6 @@ interface SFrameProps {
 export const SFrame = (args: PropsWithChildren<SFrameProps>) => {
 	const {
 		theme,
-		locale = "ko",
 		snackbar = {
 			anchorOrigin: { vertical: "top", horizontal: "center" },
 			maxSnack: 3,
@@ -45,17 +43,17 @@ export const SFrame = (args: PropsWithChildren<SFrameProps>) => {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<StyledEngineProvider enableCssLayer>
-				<CssBaseline />
-				<GlobalStyles
-					styles={`@layer theme, base, mui, components, utilities; ${get_styles()}`}
-				/>
-				<SLocale locale={locale}>
+			<SLocale>
+				<StyledEngineProvider enableCssLayer>
+					<CssBaseline />
+					<GlobalStyles
+						styles={`@layer theme, base, mui, components, utilities; ${get_styles()}`}
+					/>
 					<SnackbarProvider {...snackbar}>
 						<BrowserRouter {...router}>{children}</BrowserRouter>
 					</SnackbarProvider>
-				</SLocale>
-			</StyledEngineProvider>
+				</StyledEngineProvider>
+			</SLocale>
 		</ThemeProvider>
 	);
 };

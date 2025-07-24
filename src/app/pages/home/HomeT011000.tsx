@@ -8,8 +8,7 @@ import {
 	SCodeBlock,
 	SDiv,
 	type SFontWeightProps,
-	type SLocaleProps,
-	SLucide,
+	SLucideIcon,
 	type SScaleProps,
 	STypography,
 	useSStyles,
@@ -32,9 +31,9 @@ const code = `
 
 const message = "동해물과 백두산이 ABCDEFG abcdefg";
 
-const font_locales: SLocaleProps[] = ["ko", "en"];
+const font_locales: string[] = ["ko", "en"];
 
-const font_family: Record<SLocaleProps, string> = {
+const font_family: Record<string, string> = {
 	ko: "Pretendard GOV",
 	en: "Roboto",
 };
@@ -167,9 +166,9 @@ export const HomeT011000 = (args: HomeSectionProps) => {
 													"flex flex-row items-center gap-2",
 												]}
 											>
-												<SLucide
+												<SLucideIcon
 													scale={scale}
-													icon={<Smile />}
+													LucideIcon={Smile}
 												/>
 												<STypography
 													scale={scale}

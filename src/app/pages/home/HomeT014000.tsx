@@ -1,3 +1,5 @@
+import { Eye, Mail } from "lucide-react";
+
 import {
 	SButton,
 	SCard,
@@ -70,6 +72,54 @@ export const HomeT014000 = (args: HomeSectionProps) => {
 											placeholder="Select an option"
 										/>
 										<SDatepicker scale={scale} />
+									</SDiv>
+								))}
+						</SDiv>
+					</SCard>
+				</SDiv>
+				<SDiv>
+					<STypography
+						styles={["mb-4"]}
+						scale="2xl"
+						weight="bold"
+					>
+						{"Input"}
+					</STypography>
+					<SCard
+						styles={["bg-white"]}
+						rounded="lg"
+						shadow="xl"
+					>
+						<SDiv styles={["flex flex-col gap-2"]}>
+							{button_scales
+								.filter(
+									(scale) =>
+										scale !== "3xl" &&
+										scale !== "4xl" &&
+										scale !== "5xl" &&
+										scale !== "6xl",
+								)
+								.map((scale, i) => (
+									<SDiv
+										key={`button-scale-${i}`}
+										styles={[
+											"w-full",
+											"bg-gray-100",
+											"flex flex-row items-center gap-1",
+										]}
+									>
+										<SInput
+											styles={["w-64"]}
+											scale={scale}
+											placeholder={`s-input-${scale}`}
+										/>
+										<SInput
+											styles={[`w-${i + 12}`]}
+											scale={scale}
+											placeholder={`s-input-${scale}`}
+											prefix={<Mail />}
+											suffix={<Eye />}
+										/>
 									</SDiv>
 								))}
 						</SDiv>

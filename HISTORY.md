@@ -5,7 +5,7 @@ npm create vite@latest . -- --template react-swc-ts
 ```
 
 ```
-npm install
+npm install --save-dev @types/node
 ```
 
 ##### Git
@@ -193,6 +193,10 @@ font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMa
 
 ```
 npm install @mui/material @emotion/react @emotion/styled
+```
+
+```
+npm install @mui/x-tree-view
 ```
 
 ```

@@ -5,6 +5,19 @@
 		"button": "홈으로 이동"
 	},
 	"messages": {
+		"sign": {
+			"signin": "로그인",
+			"signin2fa": "2차 인증이 설정되어 있습니다.",
+			"username": "아이디를 입력하세요.",
+			"password": "비밀번호를 입력하세요.",
+			"rememberme": "아이디 기억하기",
+			"forgotusername": "아이디를 잊으셨나요?",
+			"forgotpassword": "비밀번호를 잊으셨나요?",
+			"email": "이메일을 입력하세요.",
+			"fullname": "이름을 입력하세요.",
+			"gotosign": "로그인 페이지로",
+			"otp": "인증번호를 입력하세요."
+		},
 		"copied": "복사되었습니다."
 	},
 	"labels": {
@@ -23,7 +36,11 @@
 			"remove": "제거",
 			"copy": "복사하기",
 			"reset": "초기화",
-			"update": "수정"
+			"update": "수정",
+			"signin": "로그인",
+			"signout": "로그아웃",
+			"profile": "프로필 관리",
+			"version": "버전정보"
 		}
 	}
 }

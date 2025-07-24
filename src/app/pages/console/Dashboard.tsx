@@ -1,0 +1,125 @@
+import { CircleQuestionMark, Eye, Pin, Settings } from "lucide-react";
+
+import { SButtonIcon, SDiv } from "@/app/seung/design";
+
+import { ConsoleMain } from "./ConsoleMain";
+
+export const Dashboard = () => {
+	return (
+		<ConsoleMain
+			breadcumbs
+			title="Dashboard"
+			suffix={
+				<SDiv styles={["flex flex-row items-center gap-4"]}>
+					<SButtonIcon
+						styles={["text-blue-600"]}
+						scale="lg"
+						LucideIcon={CircleQuestionMark}
+					/>
+					<SButtonIcon
+						styles={["text-blue-600"]}
+						scale="lg"
+						LucideIcon={Pin}
+					/>
+					<SButtonIcon
+						styles={["text-blue-600"]}
+						scale="lg"
+						LucideIcon={Eye}
+					/>
+				</SDiv>
+			}
+			actions={<SButtonIcon LucideIcon={Settings} />}
+		>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+			<div>Dashboard</div>
+		</ConsoleMain>
+	);
+};

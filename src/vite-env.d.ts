@@ -10,6 +10,7 @@ interface ImportMetaEnv {
 	readonly VITE_BASE_URL: string;
 	readonly VITE_ALLOWED_ORIGINS: string;
 	readonly VITE_AVAILABLE_LANGUAGES: string;
+	readonly VITE_BUILD_PATH: string;
 }
 
 interface ImportMeta {

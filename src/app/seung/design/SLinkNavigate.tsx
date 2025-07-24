@@ -13,12 +13,13 @@ interface SLinkNavigateProps extends Omit<LinkProps, "href" | "target" | "rel"> 
 	styles?: SClassProps[];
 	scale?: SScaleProps;
 	weight?: SFontWeightProps;
+	paint?: string;
 	to?: string;
 	replace?: boolean;
 }
 
 export const SLinkNavigate = (args: SLinkNavigateProps) => {
-	const { styles, scale, weight, to, replace, className, underline, ...misc } = args;
+	const { styles, scale, weight, paint, to, replace, className, underline, ...misc } = args;
 
 	const navigate = useNavigate();
 
@@ -37,6 +38,7 @@ export const SLinkNavigate = (args: SLinkNavigateProps) => {
 				"cursor-pointer",
 				scale && `s-font-${scale}`,
 				weight && `font-${weight}`,
+				paint && `s-color-${paint}`,
 				underline === "always"
 					? "underline underline-offset-2"
 					: underline === "hover"

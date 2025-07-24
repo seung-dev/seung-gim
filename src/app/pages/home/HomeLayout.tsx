@@ -1,18 +1,21 @@
 import { Outlet, useNavigate } from "react-router";
 
 import { AppEnvironments } from "@/app/AppEnvironments";
-import { SButton, SDiv } from "@/app/seung/design";
+import { SBrand, SButton, SDiv, SImage } from "@/app/seung/design";
 
 import { HomeFooter } from "./HomeFooter";
 import { HomeHeader } from "./HomeHeader";
-import { HomeLogo } from "./HomeLogo";
 import { HomeNavigation } from "./HomeNavigation";
 
 export const HomeLayout = () => {
 	const navigate = useNavigate();
 
-	const move_to_signin = async () => {
-		await navigate("/signin");
+	const go_home = async () => {
+		await navigate("/", { replace: true });
+	};
+
+	const go_signin = async () => {
+		await navigate("/sign/in");
 	};
 
 	return (
@@ -21,10 +24,17 @@ export const HomeLayout = () => {
 			styles={["min-h-screen", "flex flex-col"]}
 		>
 			<HomeHeader
-				Logo={
-					<HomeLogo
-						path="/"
-						label="seung.gim"
+				Brand={
+					<SBrand
+						image={
+							<SImage
+								scale="lg"
+								src="/seung-black.svg"
+								alt="Site Logo"
+							/>
+						}
+						label={AppEnvironments.APP_NAME}
+						onClick={go_home}
 					/>
 				}
 				Navigation={
@@ -43,7 +53,7 @@ export const HomeLayout = () => {
 								scale="sm"
 								label={"관리자 [Admin]"}
 								onClick={async () => {
-									await move_to_signin();
+									await go_signin();
 								}}
 							/>
 						}

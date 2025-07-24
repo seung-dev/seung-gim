@@ -5,6 +5,10 @@
 		"button": "Go to home"
 	},
 	"messages": {
+		"username": "Enter your ID",
+		"password": "Enter your password",
+		"rememberme": "Remember me",
+		"forgotpassword": "Forgot password?",
 		"copied": "Copied!"
 	},
 	"labels": {
@@ -23,7 +27,8 @@
 			"remove": "Remove",
 			"copy": "Copy",
 			"reset": "Reset",
-			"update": "Update"
+			"update": "Update",
+			"signin": "Sign in"
 		}
 	}
 }

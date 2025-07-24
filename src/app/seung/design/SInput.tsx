@@ -1,7 +1,10 @@
-import type { ReactNode } from "react";
+import { type HTMLInputTypeAttribute, type ReactNode, useState } from "react";
+
+import { Eye, EyeOff } from "lucide-react";
 
 import { FormControl, Input, InputAdornment, type InputProps } from "@mui/material";
 
+import { SButtonIcon } from "./SButtonIcon";
 import {
 	build_class,
 	type SBorderRadiusProps,
@@ -9,17 +12,34 @@ import {
 	type SScaleProps,
 } from "./SStyles";
 
-export interface SInputProps extends Omit<InputProps, "prefix" | "suffix"> {
+export interface SInputProps extends Omit<InputProps, "name" | "prefix" | "suffix"> {
 	styles?: SClassProps[];
 	rounded?: SBorderRadiusProps;
 	scale?: SScaleProps;
 	cell?: boolean;
 	prefix?: ReactNode;
 	suffix?: ReactNode;
+	password?: boolean;
 }
 
 export const SInput = (args: SInputProps) => {
-	const { styles, rounded, scale, cell, prefix, suffix, className, ...misc } = args;
+	const { styles, rounded, scale, cell, prefix, suffix, password, className, ...misc } = args;
+
+	const [type, set_type] = useState<HTMLInputTypeAttribute>(password ? "password" : "text");
+
+	const _suffix = suffix ? (
+		suffix
+	) : password ? (
+		<SButtonIcon
+			onMouseDown={() => {
+				set_type(type === "password" ? "text" : "password");
+			}}
+			onMouseLeave={() => {
+				set_type(type === "password" ? "password" : "text");
+			}}
+			LucideIcon={type === "password" ? Eye : EyeOff}
+		/>
+	) : null;
 
 	return (
 		<FormControl
@@ -44,14 +64,15 @@ export const SInput = (args: SInputProps) => {
 			)}
 			<Input
 				className="flex-1"
+				type={type}
 				{...misc}
 			/>
-			{suffix && (
+			{_suffix && (
 				<InputAdornment
 					className="s-input-suffix"
 					position="end"
 				>
-					{suffix}
+					{_suffix}
 				</InputAdornment>
 			)}
 		</FormControl>

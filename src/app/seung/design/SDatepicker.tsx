@@ -31,20 +31,6 @@ export const SDatepicker = (args: SDatepickerProps) => {
 				styles,
 			)}
 			slotProps={{
-				textField: {
-					className: "aaaaa",
-					classes: {
-						root: "aaaa",
-					},
-					slotProps: {
-						input: {
-							className: "s-datepicker-input",
-						},
-						htmlInput: {
-							className: "bbbb",
-						},
-					},
-				},
 				popper: {
 					disablePortal: true,
 				},

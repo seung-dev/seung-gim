@@ -10,7 +10,7 @@ export const HomeSection = (args: HomeSectionProps) => {
 	return (
 		<SDiv
 			className="home-section-root"
-			styles={["py-12", hero && "mt-[var(--s-header-height)]", className, ...styles]}
+			styles={["py-12", hero && "mt-[var(--s-height-header)]", className, ...styles]}
 			{...misc}
 		>
 			<SContainer>{children}</SContainer>

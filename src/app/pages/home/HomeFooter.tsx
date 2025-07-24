@@ -2,6 +2,7 @@ import {
 	SContainer,
 	SDiv,
 	SDivider,
+	SImage,
 	SLink,
 	SLinkNavigate,
 	STypography,
@@ -152,44 +153,45 @@ export const HomeFooter = (args: HomeFooterProps) => {
 							]}
 						>
 							<SLink href="https://github.com/seung-dev/seung-gim">
-								<img
-									className="w-4 h-4 filter brightness-0 invert"
-									src="/images/logos/github.svg"
+								<SImage
+									scale="md"
+									white
+									src="/images/icons/github-black.svg"
 									alt="Github"
 								/>
 							</SLink>
 							<SLink href="https://react.dev/">
-								<img
-									className="w-4 h-4 filter brightness-0 invert"
-									src="/images/logos/react.svg"
+								<SImage
+									className="w-4 h-4 filter invert"
+									src="/images/icons/react-black.svg"
 									alt="React"
 								/>
 							</SLink>
 							<SLink href="https://www.typescriptlang.org/">
-								<img
-									className="w-4 h-4 filter brightness-0 invert"
-									src="/images/logos/typescript.svg"
+								<SImage
+									className="w-4 h-4 filter invert"
+									src="/images/icons/typescript-black.svg"
 									alt="Typescript"
 								/>
 							</SLink>
 							<SLink href="https://mui.com/">
-								<img
-									className="w-4 h-4 filter brightness-0 invert"
-									src="/images/logos/mui.svg"
+								<SImage
+									className="w-4 h-4 filter invert"
+									src="/images/icons/mui-black.svg"
 									alt="Material UI"
 								/>
 							</SLink>
 							<SLink href="https://lucide.dev/icons/">
-								<img
-									className="w-4 h-4 filter brightness-0 invert"
-									src="/images/logos/lucide.svg"
+								<SImage
+									className="w-4 h-4 filter invert"
+									src="/images/icons/lucide-black.svg"
 									alt="Lucide"
 								/>
 							</SLink>
 							<SLink href="https://simpleicons.org/?q=simpleicons">
-								<img
-									className="w-4 h-4 filter brightness-0 invert"
-									src="/images/logos/simpleicons.svg"
+								<SImage
+									className="w-4 h-4 filter invert"
+									src="/images/icons/simpleicons-black.svg"
 									alt="Simple Icons"
 								/>
 							</SLink>

@@ -12,8 +12,6 @@ export type SScaleProps =
 	| "5xl"
 	| "6xl";
 
-export type SBoxShadowProps = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-
 export type SFontWeightProps = "normal" | "medium" | "bold";
 
 export type SBorderProps = "none" | "gray";
@@ -29,6 +27,8 @@ export type SBorderRadiusProps =
 	| "4xl"
 	| "full";
 
+export type SBoxShadowProps = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+
 export type SClassProps = string | string[] | number | undefined | null | false;
 
 export const build_class = (...classes: (SClassProps | SClassProps[])[]): string => {
@@ -38,12 +38,14 @@ export const build_class = (...classes: (SClassProps | SClassProps[])[]): string
 export interface SStylesProps {
 	font_size: number;
 	unit: number;
-	scale_xs: number;
-	scale_sm: number;
-	scale_md: number;
-	scale_lg: number;
-	scale_xl: number;
-	scale_2xl: number;
+	height_xs: number;
+	height_sm: number;
+	height_md: number;
+	height_lg: number;
+	height_xl: number;
+	height_2xl: number;
+	width_sidebar: number;
+	height_header: number;
 	font_xs: number;
 	font_sm: number;
 	font_md: number;
@@ -54,7 +56,6 @@ export interface SStylesProps {
 	font_4xl: number;
 	font_5xl: number;
 	font_6xl: number;
-	header_height: number;
 }
 
 interface SStylesStore {
@@ -69,12 +70,21 @@ const useSStylesStore = create<SStylesStore>()((set, get) => ({
 	styles: {
 		font_size: 16,
 		unit: 0.0625,
-		scale_xs: 28,
-		scale_sm: 34,
-		scale_md: 40,
-		scale_lg: 46,
-		scale_xl: 52,
-		scale_2xl: 64,
+		// height_xs: 28,
+		// height_sm: 34,
+		// height_md: 40,
+		// height_lg: 46,
+		// height_xl: 52,
+		// height_2xl: 64,
+		height_xs: 30,
+		height_sm: 36,
+		height_md: 42,
+		height_lg: 48,
+		height_xl: 56,
+		height_2xl: 64,
+		height_header: 64,
+		width_sidebar: 224,
+		width_sidebar_collapsed: 64,
 		font_xs: 12,
 		font_sm: 14,
 		font_md: 16,
@@ -85,7 +95,14 @@ const useSStylesStore = create<SStylesStore>()((set, get) => ({
 		font_4xl: 48,
 		font_5xl: 56,
 		font_6xl: 64,
-		header_height: 64,
+		color_mediumblue: "oklch(0.3835 0.2657 264.05)",
+		color_deepblue: "oklch(0.2549 0.1713 265.59)",
+		color_chacoalgray: "oklch(0.3171 0 0)",
+		color_gray400: "oklch(70.7% 0.022 261.325)",
+		color_link: "oklch(42.4% 0.199 265.638)",
+		color_error: "oklch(57.7% 0.245 27.325)",
+		color_esgdadta: "oklch(0.4388 0.0768 150)",
+		color_innon: "oklch(0.573 0.2095 261.36)",
 	},
 	actions: {
 		set_styles: (styles: Partial<SStylesProps>) => {
@@ -104,6 +121,9 @@ const useSStylesStore = create<SStylesStore>()((set, get) => ({
 					}
 					if (key === "unit") {
 						return `--s-${_key}: ${value}rem;`;
+					}
+					if (key.startsWith("color")) {
+						return `--s-${_key}: ${value};`;
 					}
 					return `--s-${_key}: ${unit * value}rem;`;
 				})

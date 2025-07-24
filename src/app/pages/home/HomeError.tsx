@@ -48,7 +48,7 @@ export const HomeError = (args: HomeErrorProps) => {
 					<SButton
 						styles={["gap-2", "bg-blue-700 hover:bg-blue-800 text-white"]}
 						rounded="lg"
-						scale="lg"
+						scale="md"
 						label={t("error.button")}
 						startIcon={<Home />}
 						onClick={() => navigate(path)}

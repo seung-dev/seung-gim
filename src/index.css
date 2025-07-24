@@ -8,9 +8,10 @@
 :root {
 	--s-font-ko:
 		"Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont,
-		system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
-		"Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	--s-font-en: Roboto, sans-serif;
+		system-ui, "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+		"Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", sans-serif;
+	--s-font-en: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 /*
@@ -20,11 +21,11 @@
 @import "tailwindcss";
 
 @layer utilities {
-	.s-locale-ko {
-		--default-font-family: var(--s-font-ko);
+	.s-locale-ko * {
+		font-family: var(--s-font-ko);
 	}
-	.s-locale-en {
-		--default-font-family: var(--s-font-en);
+	.s-locale-en * {
+		font-family: var(--s-font-en);
 	}
 	.s-font-ko {
 		font-family: var(--s-font-ko);
@@ -37,64 +38,55 @@
 		height: 100%;
 	}
 	.s-height-xs {
-		height: var(--s-scale-xs);
+		height: var(--s-height-xs);
 	}
 	.s-height-sm {
-		height: var(--s-scale-sm);
+		height: var(--s-height-sm);
 	}
 	.s-height-md {
-		height: var(--s-scale-md);
+		height: var(--s-height-md);
 	}
 	.s-height-lg {
-		height: var(--s-scale-lg);
+		height: var(--s-height-lg);
 	}
 	.s-height-xl {
-		height: var(--s-scale-xl);
+		height: var(--s-height-xl);
 	}
 	.s-height-2xl {
-		height: var(--s-scale-2xl);
+		height: var(--s-height-2xl);
 	}
-	.s-width-xs {
-		width: var(--s-scale-xs);
+	.s-height-header {
+		height: var(--s-height-header);
 	}
-	.s-width-sm {
-		width: var(--s-scale-sm);
+	.s-width-sidebar {
+		width: var(--s-width-sidebar);
 	}
-	.s-width-md {
-		width: var(--s-scale-md);
-	}
-	.s-width-lg {
-		width: var(--s-scale-lg);
-	}
-	.s-width-xl {
-		width: var(--s-scale-xl);
-	}
-	.s-width-2xl {
-		width: var(--s-scale-2xl);
+	.s-width-sidebar-collapsed {
+		width: var(--s-width-sidebar-collapsed);
 	}
 	.s-square-xs {
-		width: var(--s-scale-xs);
-		height: var(--s-scale-xs);
+		width: var(--s-height-xs);
+		height: var(--s-height-xs);
 	}
 	.s-square-sm {
-		width: var(--s-scale-sm);
-		height: var(--s-scale-sm);
+		width: var(--s-height-sm);
+		height: var(--s-height-sm);
 	}
 	.s-square-md {
-		width: var(--s-scale-md);
-		height: var(--s-scale-md);
+		width: var(--s-height-md);
+		height: var(--s-height-md);
 	}
 	.s-square-lg {
-		width: var(--s-scale-lg);
-		height: var(--s-scale-lg);
+		width: var(--s-height-lg);
+		height: var(--s-height-lg);
 	}
 	.s-square-xl {
-		width: var(--s-scale-xl);
-		height: var(--s-scale-xl);
+		width: var(--s-height-xl);
+		height: var(--s-height-xl);
 	}
 	.s-square-2xl {
-		width: var(--s-scale-2xl);
-		height: var(--s-scale-2xl);
+		width: var(--s-height-2xl);
+		height: var(--s-height-2xl);
 	}
 	.s-font-xs {
 		font-size: var(--s-font-xs);
@@ -126,156 +118,166 @@
 	.s-font-6xl {
 		font-size: var(--s-font-6xl);
 	}
-	.s-lucide-xs > .lucide {
+	.s-image-icon-xs {
 		width: var(--s-font-xs);
 		height: var(--s-font-xs);
 	}
-	.s-lucide-sm > .lucide {
+	.s-image-icon-sm {
 		width: var(--s-font-sm);
 		height: var(--s-font-sm);
 	}
-	.s-lucide-md > .lucide {
+	.s-image-icon-md {
 		width: var(--s-font-md);
 		height: var(--s-font-md);
 	}
-	.s-lucide-lg > .lucide {
+	.s-image-icon-lg {
 		width: var(--s-font-lg);
 		height: var(--s-font-lg);
 	}
-	.s-lucide-xl > .lucide {
+	.s-image-icon-xl {
 		width: var(--s-font-xl);
 		height: var(--s-font-xl);
 	}
-	.s-lucide-2xl > .lucide {
+	.s-image-icon-2xl {
 		width: var(--s-font-2xl);
 		height: var(--s-font-2xl);
 	}
-	.s-lucide-3xl > .lucide {
+	.s-image-icon-3xl {
 		width: var(--s-font-3xl);
 		height: var(--s-font-3xl);
 	}
-	.s-lucide-4xl > .lucide {
+	.s-image-icon-4xl {
 		width: var(--s-font-4xl);
 		height: var(--s-font-4xl);
 	}
-	.s-lucide-5xl > .lucide {
+	.s-image-icon-5xl {
 		width: var(--s-font-5xl);
 		height: var(--s-font-5xl);
 	}
-	.s-lucide-6xl > .lucide {
+	.s-image-icon-6xl {
+		width: var(--s-font-6xl);
+		height: var(--s-font-6xl);
+	}
+	.s-color-white {
+		color: #fff;
+	}
+	.s-color-black {
+		color: #000;
+	}
+	.s-color-medium-blue {
+		color: var(--s-color-medium-blue);
+	}
+	.s-color-gray400 {
+		color: var(--s-color-gray400);
+	}
+	.s-color-link {
+		color: var(--s-color-link);
+	}
+	.s-color-error {
+		color: var(--s-color-error);
+	}
+	.s-lucide-xs {
+		width: var(--s-font-xs);
+		height: var(--s-font-xs);
+	}
+	.s-lucide-sm {
+		width: var(--s-font-sm);
+		height: var(--s-font-sm);
+	}
+	.s-lucide-md {
+		width: var(--s-font-md);
+		height: var(--s-font-md);
+	}
+	.s-lucide-lg {
+		width: var(--s-font-lg);
+		height: var(--s-font-lg);
+	}
+	.s-lucide-xl {
+		width: var(--s-font-xl);
+		height: var(--s-font-xl);
+	}
+	.s-lucide-2xl {
+		width: var(--s-font-2xl);
+		height: var(--s-font-2xl);
+	}
+	.s-lucide-3xl {
+		width: var(--s-font-3xl);
+		height: var(--s-font-3xl);
+	}
+	.s-lucide-4xl {
+		width: var(--s-font-4xl);
+		height: var(--s-font-4xl);
+	}
+	.s-lucide-5xl {
+		width: var(--s-font-5xl);
+		height: var(--s-font-5xl);
+	}
+	.s-lucide-6xl {
 		width: var(--s-font-6xl);
 		height: var(--s-font-6xl);
 	}
 	.s-button-xs {
-		height: var(--s-scale-xs);
-		padding-inline: calc(var(--s-scale-xs) * 0.5);
+		height: var(--s-height-xs);
+		padding-inline: calc(var(--s-height-xs) * 0.5);
 	}
 	.s-button-xs > .s-button-label {
 		line-height: initial;
 		font-size: var(--s-font-xs);
 	}
 	.s-button-sm {
-		height: var(--s-scale-sm);
-		padding-inline: calc(var(--s-scale-sm) * 0.5);
+		height: var(--s-height-sm);
+		padding-inline: calc(var(--s-height-sm) * 0.5);
 	}
 	.s-button-sm > .s-button-label {
 		line-height: initial;
 		font-size: var(--s-font-sm);
 	}
 	.s-button-md {
-		height: var(--s-scale-md);
-		padding-inline: calc(var(--s-scale-md) * 0.5);
+		height: var(--s-height-md);
+		padding-inline: calc(var(--s-height-md) * 0.5);
 	}
 	.s-button-md > .s-button-label {
-		/* line-height: initial; */
+		line-height: initial;
 		font-size: var(--s-font-md);
 	}
 	.s-button-lg {
-		height: var(--s-scale-lg);
-		padding-inline: calc(var(--s-scale-lg) * 0.5);
+		height: var(--s-height-lg);
+		padding-inline: calc(var(--s-height-lg) * 0.5);
 	}
 	.s-button-lg > .s-button-label {
-		/* line-height: initial; */
+		line-height: initial;
 		font-size: var(--s-font-lg);
 	}
 	.s-button-xl {
-		height: var(--s-scale-xl);
-		padding-inline: calc(var(--s-scale-xl) * 0.5);
+		height: var(--s-height-xl);
+		padding-inline: calc(var(--s-height-xl) * 0.5);
 	}
 	.s-button-xl > .s-button-label {
 		line-height: initial;
 		font-size: var(--s-font-xl);
 	}
 	.s-button-2xl {
-		height: var(--s-scale-2xl);
-		padding-inline: calc(var(--s-scale-2xl) * 0.5);
+		height: var(--s-height-2xl);
+		padding-inline: calc(var(--s-height-2xl) * 0.5);
 	}
 	.s-button-2xl > .s-button-label {
 		line-height: initial;
 		font-size: var(--s-font-2xl);
-	}
-	.s-button-icon-xs > .lucide {
-		width: var(--s-font-xs);
-		height: var(--s-font-xs);
-		color: inherit;
-	}
-	.s-button-icon-sm > .lucide {
-		width: var(--s-font-sm);
-		height: var(--s-font-sm);
-		color: inherit;
-	}
-	.s-button-icon-md > .lucide {
-		width: var(--s-font-md);
-		height: var(--s-font-md);
-		color: inherit;
-	}
-	.s-button-icon-lg > .lucide {
-		width: var(--s-font-lg);
-		height: var(--s-font-lg);
-		color: inherit;
-	}
-	.s-button-icon-xl > .lucide {
-		width: var(--s-font-xl);
-		height: var(--s-font-xl);
-		color: inherit;
-	}
-	.s-button-icon-2xl > .lucide {
-		width: var(--s-font-2xl);
-		height: var(--s-font-2xl);
-		color: inherit;
-	}
-	.s-button-icon-3xl > .lucide {
-		width: var(--s-font-3xl);
-		height: var(--s-font-3xl);
-		color: inherit;
-	}
-	.s-button-icon-4xl > .lucide {
-		width: var(--s-font-4xl);
-		height: var(--s-font-4xl);
-		color: inherit;
-	}
-	.s-button-icon-5xl > .lucide {
-		width: var(--s-font-5xl);
-		height: var(--s-font-5xl);
-		color: inherit;
-	}
-	.s-button-icon-6xl > .lucide {
-		width: var(--s-font-6xl);
-		height: var(--s-font-6xl);
-		color: inherit;
 	}
 	.s-input-root input {
 		padding-inline: calc(var(--s-unit) * 8);
 	}
 	.s-select-xs input,
 	.s-input-xs input {
-		height: var(--s-scale-xs);
+		height: var(--s-height-xs);
 		font-size: var(--s-font-xs);
 	}
 	.s-input-xs .s-input-prefix {
 		padding-right: calc(var(--s-unit) * 8);
+		padding-left: calc(var(--s-unit) * 12);
 	}
 	.s-input-xs .s-input-suffix {
+		padding-right: calc(var(--s-unit) * 12);
 		padding-left: calc(var(--s-unit) * 8);
 	}
 	.s-input-xs .lucide {
@@ -284,13 +286,15 @@
 	}
 	.s-select-sm input,
 	.s-input-sm input {
-		height: var(--s-scale-sm);
+		height: var(--s-height-sm);
 		font-size: var(--s-font-sm);
 	}
 	.s-input-sm .s-input-prefix {
 		padding-right: calc(var(--s-unit) * 8);
+		padding-left: calc(var(--s-unit) * 12);
 	}
 	.s-input-sm .s-input-suffix {
+		padding-right: calc(var(--s-unit) * 12);
 		padding-left: calc(var(--s-unit) * 8);
 	}
 	.s-input-sm .lucide {
@@ -299,13 +303,15 @@
 	}
 	.s-select-md input,
 	.s-input-md input {
-		height: var(--s-scale-md);
+		height: var(--s-height-md);
 		font-size: var(--s-font-md);
 	}
 	.s-input-md .s-input-prefix {
 		padding-right: calc(var(--s-unit) * 8);
+		padding-left: calc(var(--s-unit) * 12);
 	}
 	.s-input-md .s-input-suffix {
+		padding-right: calc(var(--s-unit) * 12);
 		padding-left: calc(var(--s-unit) * 8);
 	}
 	.s-input-md .lucide {
@@ -314,14 +320,16 @@
 	}
 	.s-select-lg input,
 	.s-input-lg input {
-		height: var(--s-scale-lg);
+		height: var(--s-height-lg);
 		font-size: var(--s-font-lg);
 	}
 	.s-input-lg .s-input-prefix {
-		padding-right: calc(var(--s-unit) * 8);
+		padding-right: calc(var(--s-unit) * 10);
+		padding-left: calc(var(--s-unit) * 12);
 	}
 	.s-input-lg .s-input-suffix {
-		padding-left: calc(var(--s-unit) * 8);
+		padding-right: calc(var(--s-unit) * 12);
+		padding-left: calc(var(--s-unit) * 10);
 	}
 	.s-input-lg .lucide {
 		width: var(--s-font-lg);
@@ -329,14 +337,16 @@
 	}
 	.s-select-xl input,
 	.s-input-xl input {
-		height: var(--s-scale-xl);
+		height: var(--s-height-xl);
 		font-size: var(--s-font-xl);
 	}
 	.s-input-xl .s-input-prefix {
-		padding-right: calc(var(--s-unit) * 8);
+		padding-right: calc(var(--s-unit) * 10);
+		padding-left: calc(var(--s-unit) * 12);
 	}
 	.s-input-xl .s-input-suffix {
-		padding-left: calc(var(--s-unit) * 8);
+		padding-right: calc(var(--s-unit) * 12);
+		padding-left: calc(var(--s-unit) * 10);
 	}
 	.s-input-xl .lucide {
 		width: var(--s-font-xl);
@@ -344,14 +354,16 @@
 	}
 	.s-select-2xl input,
 	.s-input-2xl input {
-		height: var(--s-scale-2xl);
+		height: var(--s-height-2xl);
 		font-size: var(--s-font-2xl);
 	}
 	.s-input-2xl .s-input-prefix {
-		padding-right: calc(var(--s-unit) * 8);
+		padding-right: calc(var(--s-unit) * 10);
+		padding-left: calc(var(--s-unit) * 12);
 	}
 	.s-input-2xl .s-input-suffix {
-		padding-left: calc(var(--s-unit) * 8);
+		padding-right: calc(var(--s-unit) * 12);
+		padding-left: calc(var(--s-unit) * 10);
 	}
 	.s-input-2xl .lucide {
 		width: var(--s-font-2xl);
@@ -378,7 +390,7 @@
 		width: calc(var(--s-font-xs) * 10);
 	}
 	.s-datepicker-xs span {
-		height: var(--s-scale-xs);
+		height: var(--s-height-xs);
 		font-size: var(--s-font-xs);
 	}
 	.s-datepicker-xs svg {
@@ -389,7 +401,7 @@
 		width: calc(var(--s-font-sm) * 10);
 	}
 	.s-datepicker-sm span {
-		height: var(--s-scale-sm);
+		height: var(--s-height-sm);
 		font-size: var(--s-font-sm);
 	}
 	.s-datepicker-sm svg {
@@ -400,7 +412,7 @@
 		width: calc(var(--s-font-md) * 10);
 	}
 	.s-datepicker-md span {
-		height: var(--s-scale-md);
+		height: var(--s-height-md);
 		font-size: var(--s-font-md);
 	}
 	.s-datepicker-md svg {
@@ -411,7 +423,7 @@
 		width: calc(var(--s-font-lg) * 10);
 	}
 	.s-datepicker-lg span {
-		height: var(--s-scale-lg);
+		height: var(--s-height-lg);
 		font-size: var(--s-font-lg);
 	}
 	.s-datepicker-lg svg {
@@ -422,7 +434,7 @@
 		width: calc(var(--s-font-xl) * 10);
 	}
 	.s-datepicker-xl span {
-		height: var(--s-scale-xl);
+		height: var(--s-height-xl);
 		font-size: var(--s-font-xl);
 	}
 	.s-datepicker-xl svg {
@@ -433,11 +445,53 @@
 		width: calc(var(--s-font-2xl) * 10);
 	}
 	.s-datepicker-2xl span {
-		height: var(--s-scale-2xl);
+		height: var(--s-height-2xl);
 		font-size: var(--s-font-2xl);
 	}
 	.s-datepicker-2xl svg {
 		width: calc(var(--s-font-2xl) * 1.5);
 		height: calc(var(--s-font-2xl) * 1.5);
+	}
+	.s-checkbox-xs .s-checkbox-label {
+		font-size: var(--s-font-xs);
+	}
+	.s-checkbox-xs .s-checkbox-input svg {
+		width: calc(var(--s-font-xs) * 1.2);
+		height: calc(var(--s-font-xs) * 1.2);
+	}
+	.s-checkbox-sm .s-checkbox-label {
+		font-size: var(--s-font-sm);
+	}
+	.s-checkbox-sm .s-checkbox-input svg {
+		width: calc(var(--s-font-sm) * 1.2);
+		height: calc(var(--s-font-sm) * 1.2);
+	}
+	.s-checkbox-md .s-checkbox-label {
+		font-size: var(--s-font-md);
+	}
+	.s-checkbox-md .s-checkbox-input svg {
+		width: calc(var(--s-font-md) * 1.2);
+		height: calc(var(--s-font-md) * 1.2);
+	}
+	.s-checkbox-lg .s-checkbox-label {
+		font-size: var(--s-font-lg);
+	}
+	.s-checkbox-lg .s-checkbox-input svg {
+		width: calc(var(--s-font-lg) * 1.2);
+		height: calc(var(--s-font-lg) * 1.2);
+	}
+	.s-checkbox-xl .s-checkbox-label {
+		font-size: var(--s-font-xl);
+	}
+	.s-checkbox-xl .s-checkbox-input svg {
+		width: calc(var(--s-font-xl) * 1.2);
+		height: calc(var(--s-font-xl) * 1.2);
+	}
+	.s-checkbox-2xl .s-checkbox-label {
+		font-size: var(--s-font-2xl);
+	}
+	.s-checkbox-2xl .s-checkbox-input svg {
+		width: calc(var(--s-font-2xl) * 1.2);
+		height: calc(var(--s-font-2xl) * 1.2);
 	}
 }

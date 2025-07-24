@@ -15,4 +15,4 @@ export const AppEnvironments: Readonly<SEnvrionments> = {
 	) as unknown as SLanguage[],
 } as const;
 
-export const AppStyles: Partial<SStylesProps> = { unit: 0.0625, header_height: 64 };
+export const AppStyles: Partial<SStylesProps> = { unit: 0.0625, height_header: 64 };

@@ -38,7 +38,7 @@ export const SCodeBlock = (args: SCodeBlockProps) => {
 				<SButton
 					scale="sm"
 					label="복사"
-					startIcon={<Copy />}
+					LucideIcon={Copy}
 					onClick={onClick}
 				/>
 			</SDiv>

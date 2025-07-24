@@ -70,6 +70,7 @@ export default tsEslint.config(
 			// "@typescript-eslint/no-misused-promises": ["error", { checksVoidReturn: false }],
 			/* warn */
 			"@typescript-eslint/no-misused-spread": ["warn"],
+			"@typescript-eslint/no-empty-object-type": ["warn"],
 			// "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
 			// "@typescript-eslint/no-unused-vars": "warn",
 			// "@typescript-eslint/no-empty-object-type": "warn",

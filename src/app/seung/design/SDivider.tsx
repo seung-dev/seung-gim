@@ -11,7 +11,7 @@ export const SDivider = (args: SDividerProps) => {
 
 	return (
 		<Divider
-			className={build_class("s-divider-root", className, styles)}
+			className={build_class("s-divider-root", "border-gray-300", className, styles)}
 			{...misc}
 		/>
 	);
