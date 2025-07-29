@@ -56,9 +56,9 @@ export const AppRoutes: SRouteProps<AppLayout>[] = [
 		children: [
 			{
 				path: "/console/dashboard",
-				Component: Dashboard,
 				label: "Dashboard",
 				Icon: LayoutDashboard,
+				Component: Dashboard,
 			},
 			{
 				label: "Base",
@@ -66,13 +66,13 @@ export const AppRoutes: SRouteProps<AppLayout>[] = [
 				children: [
 					{
 						path: "/console/base/t010000",
-						Component: BaseT010000,
 						label: "Typography",
+						Component: BaseT010000,
 					},
 					{
 						path: "/console/base/t011000",
-						Component: BaseT011000,
 						label: "Color",
+						Component: BaseT011000,
 					},
 				],
 			},
@@ -86,24 +86,24 @@ export const AppRoutes: SRouteProps<AppLayout>[] = [
 					},
 					{
 						path: "/console/action/t010000",
-						Component: ActionT010000,
 						label: "Input",
 						actionable: true,
+						Component: ActionT010000,
 					},
 					{
 						path: "/console/action/t011000",
-						Component: ActionT011000,
 						label: "Checkbox",
+						Component: ActionT011000,
 					},
 					{
 						path: "/console/action/t012000",
-						Component: ActionT012000,
 						label: "Radio",
+						Component: ActionT012000,
 					},
 					{
 						path: "/console/action/t013000",
-						Component: ActionT013000,
 						label: "Select",
+						Component: ActionT013000,
 					},
 					{
 						label: "Control",
@@ -111,8 +111,8 @@ export const AppRoutes: SRouteProps<AppLayout>[] = [
 					},
 					{
 						path: "/console/action/t020000",
-						Component: ActionT020000,
 						label: "Button",
+						Component: ActionT020000,
 					},
 				],
 			},
@@ -122,23 +122,23 @@ export const AppRoutes: SRouteProps<AppLayout>[] = [
 				children: [
 					{
 						path: "/console/widget/t010000",
-						Component: WidgetT010000,
 						label: "Toast",
+						Component: WidgetT010000,
 					},
 					{
 						path: "/console/widget/t011000",
-						Component: WidgetT011000,
 						label: "Modal",
+						Component: WidgetT011000,
 					},
 					{
 						path: "/console/widget/t012000",
-						Component: WidgetT012000,
 						label: "Drawer",
+						Component: WidgetT012000,
 					},
 					{
 						path: "/console/widget/t020000",
-						Component: WidgetT020000,
 						label: "Table",
+						Component: WidgetT020000,
 					},
 				],
 			},

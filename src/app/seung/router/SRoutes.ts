@@ -10,12 +10,12 @@ export interface SRouteProps<T = string> {
 	label?: string;
 	Icon?: ElementType<LucideProps>;
 	Component?: ComponentType;
-	children?: SRouteProps<T>[];
 	roles?: string[];
 	visible?: boolean;
 	disabled?: boolean;
 	actionable?: boolean;
 	subgroup?: boolean;
+	children?: SRouteProps<T>[];
 }
 
 export const toRouteProps = (routes: SRouteProps[]): RouteObject[] => {

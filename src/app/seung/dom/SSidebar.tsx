@@ -90,7 +90,7 @@ const SSidebarItem = (args: SSidebarItemProps) => {
 				? CollapsedIcon
 				: collapsed
 					? (Icon ?? Folder)
-					: null;
+					: Icon;
 
 	const handleClick = () => {
 		if (collapsed) {
@@ -119,7 +119,7 @@ const SSidebarItem = (args: SSidebarItemProps) => {
 	return (
 		<div>
 			{subgroup ? (
-				<SDiv styles={["mt-1", indent]}>
+				<SDiv styles={["my-1", indent]}>
 					<STypography
 						styles={["pl-2", "s-color-gray"]}
 						scale="sm"
@@ -139,7 +139,7 @@ const SSidebarItem = (args: SSidebarItemProps) => {
 					]}
 					onClick={handleClick}
 				>
-					<div>
+					<div className={level > 0 ? "pl-2" : ""}>
 						{Prefix && (
 							<SLucideIcon
 								styles={["w-5 h-5 flex-shrink-0"]}
