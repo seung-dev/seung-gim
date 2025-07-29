@@ -6,7 +6,7 @@ import {
 	SLink,
 	SLinkNavigate,
 	STypography,
-} from "@/app/seung/design";
+} from "@/app/seung/dom";
 
 interface HomeFooterProps {
 	author?: {
@@ -22,11 +22,7 @@ export const HomeFooter = (args: HomeFooterProps) => {
 	const year = new Date().getFullYear();
 
 	return (
-		<SDiv
-			className="home-footer-root"
-			styles={["py-12", "bg-gray-800 text-white"]}
-			component="footer"
-		>
+		<footer className="home-footer-root py-12 bg-gray-800 s-color-white">
 			<SContainer>
 				<SDiv styles={["mx-auto"]}>
 					<SDiv styles={["mb-8", "grid grid-cols-12 gap-4"]}>
@@ -138,7 +134,7 @@ export const HomeFooter = (args: HomeFooterProps) => {
 							))}
 						</SDiv>
 					</SDiv>
-					<SDivider styles={["mb-8", "border-gray-400"]} />
+					<SDivider styles={["mb-8", "s-color-outline"]} />
 					<SDiv styles={["grid grid-cols-12 gap-4"]}>
 						<SDiv styles={["col-span-12 md:col-span-6"]}>
 							<STypography
@@ -199,6 +195,6 @@ export const HomeFooter = (args: HomeFooterProps) => {
 					</SDiv>
 				</SDiv>
 			</SContainer>
-		</SDiv>
+		</footer>
 	);
 };

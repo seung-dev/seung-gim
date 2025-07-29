@@ -65,6 +65,12 @@ export const replace = (
 export const trim = (value: string | undefined): string | undefined =>
 	replace(value, SRegex.TRIM, "");
 
+export const unescape_text = (value?: string): string =>
+	value
+		? (new DOMParser().parseFromString(value, "text/html").documentElement.textContent ??
+			"")
+		: "";
+
 export const number_array = (length: number, begin?: number): number[] => {
 	const add: number = begin ?? 0;
 	return Array.from({ length: length }).map((_, i) => i + add);

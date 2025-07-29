@@ -5,7 +5,7 @@ import { ArrowUp01, Bell, Languages, LogOut, UserCog } from "lucide-react";
 import { Avatar } from "@mui/material";
 
 import { to_color } from "@/app/seung/core";
-import { SButtonIcon, SButtonMenu, SDiv, SLucideIcon, STypography } from "@/app/seung/design";
+import { SButtonIcon, SButtonMenu, SDiv, SLucideIcon, STypography } from "@/app/seung/dom";
 import { useSUserProfile } from "@/app/seung/stores";
 import { useSignout } from "@/app/stores";
 
@@ -44,21 +44,21 @@ export const ConsoleHeaderRight = () => {
 	return (
 		<SDiv styles={["flex flex-row items-center gap-6"]}>
 			<SButtonIcon
-				paint="white"
-				LucideIcon={Bell}
+				styles={["s-color-white"]}
+				Icon={Bell}
 			/>
 			<SButtonMenu
-				Label={
+				label={
 					<SLucideIcon
+						styles={["s-color-white"]}
 						scale="lg"
-						paint="white"
-						LucideIcon={Languages}
+						Icon={Languages}
 					/>
 				}
 				items={[
 					{
 						label: "한국어",
-						Prefix: (
+						prefix: (
 							<STypography
 								styles={["text-gray-400"]}
 								scale="sm"
@@ -70,7 +70,7 @@ export const ConsoleHeaderRight = () => {
 					},
 					{
 						label: "English",
-						Prefix: (
+						prefix: (
 							<STypography
 								styles={["text-gray-400"]}
 								scale="sm"
@@ -85,7 +85,7 @@ export const ConsoleHeaderRight = () => {
 			<SButtonMenu
 				anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
 				transformOrigin={{ horizontal: "right", vertical: "top" }}
-				Label={
+				label={
 					<Avatar
 						className="w-8 h-8 font-bold cursor-pointer"
 						sx={{ backgroundColor: color }}
@@ -96,20 +96,20 @@ export const ConsoleHeaderRight = () => {
 				items={[
 					{
 						label: t("labels.buttons.profile"),
-						Prefix: (
+						prefix: (
 							<SLucideIcon
 								scale="lg"
-								LucideIcon={UserCog}
+								Icon={UserCog}
 							/>
 						),
 						action: go_profile,
 					},
 					{
 						label: t("labels.buttons.version"),
-						Prefix: (
+						prefix: (
 							<SLucideIcon
 								scale="lg"
-								LucideIcon={ArrowUp01}
+								Icon={ArrowUp01}
 							/>
 						),
 						action: show_version,
@@ -117,10 +117,10 @@ export const ConsoleHeaderRight = () => {
 					{ divider: true },
 					{
 						label: t("labels.buttons.signout"),
-						Prefix: (
+						prefix: (
 							<SLucideIcon
 								scale="lg"
-								LucideIcon={LogOut}
+								Icon={LogOut}
 							/>
 						),
 						action: signout,

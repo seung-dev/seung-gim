@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 
 import { Home, TriangleAlert } from "lucide-react";
 
-import { SButton, SContainer, SDiv, STypography } from "@/app/seung/design";
+import { SButton, SContainer, SDiv, STypography } from "@/app/seung/dom";
 
 interface HomeErrorProps {
 	title?: string;
@@ -36,7 +36,7 @@ export const HomeError = (args: HomeErrorProps) => {
 						"w-full",
 						"py-4 px-4",
 						"flex flex-col gap-2",
-						"border-l-4 border-orange-400",
+						"outline-l-4 outline-orange-400",
 					]}
 				>
 					<STypography>{message ?? t("error.message")}</STypography>
@@ -46,11 +46,10 @@ export const HomeError = (args: HomeErrorProps) => {
 				</SDiv>
 				<SDiv styles={["w-full", "flex flex-row items-center justify-center"]}>
 					<SButton
-						styles={["gap-2", "bg-blue-700 hover:bg-blue-800 text-white"]}
-						rounded="lg"
+						styles={["gap-2", "bg-blue-700 hover:bg-blue-800 s-color-white"]}
 						scale="md"
+						Prefix={Home}
 						label={t("error.button")}
-						startIcon={<Home />}
 						onClick={() => navigate(path)}
 					/>
 				</SDiv>

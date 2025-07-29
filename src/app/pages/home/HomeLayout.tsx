@@ -1,20 +1,16 @@
 import { Outlet, useNavigate } from "react-router";
 
 import { AppEnvironments } from "@/app/AppEnvironments";
-import { SBrand, SButton, SDiv, SImage } from "@/app/seung/design";
+import { SButton, SDiv, SImage, STypography } from "@/app/seung/dom";
 
 import { HomeFooter } from "./HomeFooter";
-import { HomeHeader } from "./HomeHeader";
+import { HomeHeader, HomeHeaderLogo } from "./HomeHeader";
 import { HomeNavigation } from "./HomeNavigation";
 
 export const HomeLayout = () => {
 	const navigate = useNavigate();
 
-	const go_home = async () => {
-		await navigate("/", { replace: true });
-	};
-
-	const go_signin = async () => {
+	const handleClick = async () => {
 		await navigate("/sign/in");
 	};
 
@@ -24,8 +20,8 @@ export const HomeLayout = () => {
 			styles={["min-h-screen", "flex flex-col"]}
 		>
 			<HomeHeader
-				Brand={
-					<SBrand
+				logo={
+					<HomeHeaderLogo
 						image={
 							<SImage
 								scale="lg"
@@ -33,11 +29,20 @@ export const HomeLayout = () => {
 								alt="Site Logo"
 							/>
 						}
-						label={AppEnvironments.APP_NAME}
-						onClick={go_home}
+						name={
+							<STypography
+								styles={["s-color-black"]}
+								locale="en"
+								scale="lg"
+								weight="bold"
+							>
+								{AppEnvironments.APP_NAME}
+							</STypography>
+						}
+						to="/"
 					/>
 				}
-				Navigation={
+				navigation={
 					<HomeNavigation
 						// routes={AppRoutes.filter(({ layout }) => layout === "home")}
 						routes={[
@@ -46,27 +51,20 @@ export const HomeLayout = () => {
 							{ path: "/c", label: "C Menu" },
 							{ path: "/d", label: "D Menu" },
 						]}
-						Action={
+						action={
 							<SButton
-								contained="blue"
-								rounded="full"
+								styles={["bg-blue-600 rounded-full s-color-white"]}
 								scale="sm"
 								label={"관리자 [Admin]"}
-								onClick={async () => {
-									await go_signin();
-								}}
+								onClick={handleClick}
 							/>
 						}
 					/>
 				}
 			/>
-			<SDiv
-				className="host-layout-main"
-				styles={["flex-1"]}
-				component="main"
-			>
+			<main className="host-layout-main flex-1">
 				<Outlet />
-			</SDiv>
+			</main>
 			<HomeFooter
 				author={{
 					name: AppEnvironments.APP_AUTHOR_NAME,

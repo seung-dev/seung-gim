@@ -1,7 +1,7 @@
-import { type SClassProps, SDiv, STypography } from "@/app/seung/design";
+import { SDiv, type SStyleProps, STypography } from "@/app/seung/dom";
 
 interface ConsoleMainTitleProps {
-	styles?: SClassProps[];
+	styles?: SStyleProps;
 	title: string;
 }
 

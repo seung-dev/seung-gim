@@ -1,4 +1,4 @@
-import { useSPostMutation } from "@/app/seung/stores/SRest";
+import { useSPostMutation } from "@/app/seung/stores";
 
 export interface SignForgotUsernameForm {
 	email: string;

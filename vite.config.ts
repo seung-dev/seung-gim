@@ -23,7 +23,7 @@ export default ({ mode }: ConfigEnv) => {
 			},
 		},
 		build: {
-			outDir: build_path,
+			outDir: !build_path ? "dist" : build_path,
 		},
 	});
 };

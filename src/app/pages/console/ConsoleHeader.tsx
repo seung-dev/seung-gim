@@ -1,17 +1,23 @@
-import { SDiv } from "@/app/seung/design";
+import { SDiv, type SStyleProps } from "@/app/seung/dom";
 
 import { ConsoleHeaderLeft } from "./ConsoleHeaderLeft";
 import { ConsoleHeaderRight } from "./ConsoleHeaderRight";
 
-export const ConsoleHeader = () => {
+interface ConsoleHeaderProps {
+	styles?: SStyleProps;
+}
+
+export const ConsoleHeader = (args: ConsoleHeaderProps) => {
+	const { styles } = args;
+
 	return (
 		<SDiv
 			className="console-header-root"
 			styles={[
 				"s-height-header",
-				"bg-[var(--s-color-chacoalgray)] shadow-md",
-				"flex flex-row items-center justify-between",
-				"px-8",
+				"shadow-md",
+				"px-8 flex flex-row items-center justify-between",
+				styles,
 			]}
 		>
 			<ConsoleHeaderLeft />

@@ -1,4 +1,4 @@
-import { SDiv } from "@/app/seung/design";
+import { SDiv } from "@/app/seung/dom";
 
 import { ConsoleBody } from "./ConsoleBody";
 import { ConsoleSidebar } from "./ConsoleSidebar";

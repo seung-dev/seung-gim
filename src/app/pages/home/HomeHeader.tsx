@@ -1,14 +1,16 @@
 import type { ReactNode } from "react";
 
-import { SAppBar, SContainer, SToolbar } from "@/app/seung/design";
+import { useNavigate } from "react-router";
+
+import { SAppBar, SContainer, SDiv, SToolbar } from "@/app/seung/dom";
 
 interface HomeHeaderProps {
-	Brand: ReactNode;
-	Navigation?: ReactNode;
+	logo?: ReactNode;
+	navigation?: ReactNode;
 }
 
 export const HomeHeader = (args: HomeHeaderProps) => {
-	const { Brand, Navigation, ...misc } = args;
+	const { logo, navigation, ...misc } = args;
 
 	return (
 		<SAppBar
@@ -18,10 +20,38 @@ export const HomeHeader = (args: HomeHeaderProps) => {
 		>
 			<SContainer>
 				<SToolbar styles={["items-center space-between"]}>
-					{Brand}
-					{Navigation}
+					{logo}
+					{navigation}
 				</SToolbar>
 			</SContainer>
 		</SAppBar>
+	);
+};
+
+export interface HomeHeaderLogoProps {
+	image?: ReactNode;
+	name?: ReactNode;
+	to?: string;
+}
+
+export const HomeHeaderLogo = (args: HomeHeaderLogoProps) => {
+	const { image, name, to } = args;
+
+	const navigate = useNavigate();
+
+	const handleClick = async () => {
+		if (to) {
+			await navigate(to);
+		}
+	};
+
+	return (
+		<SDiv
+			styles={["flex flex-row items-center gap-2", to && "cursor-pointer"]}
+			onClick={handleClick}
+		>
+			{image}
+			{name}
+		</SDiv>
 	);
 };

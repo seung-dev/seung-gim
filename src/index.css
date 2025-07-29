@@ -37,6 +37,9 @@
 		width: 100%;
 		height: 100%;
 	}
+	.s-line-height-initial {
+		line-height: initial;
+	}
 	.s-height-xs {
 		height: var(--s-height-xs);
 	}
@@ -159,19 +162,16 @@
 		height: var(--s-font-6xl);
 	}
 	.s-color-white {
-		color: #fff;
+		color: var(--s-color-white);
+	}
+	.s-color-gray {
+		color: var(--s-color-gray);
 	}
 	.s-color-black {
-		color: #000;
+		color: var(--s-color-black);
 	}
-	.s-color-medium-blue {
-		color: var(--s-color-medium-blue);
-	}
-	.s-color-gray400 {
-		color: var(--s-color-gray400);
-	}
-	.s-color-link {
-		color: var(--s-color-link);
+	.s-color-outline {
+		outline-color: var(--s-color-outline);
 	}
 	.s-color-error {
 		color: var(--s-color-error);

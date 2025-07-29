@@ -3,18 +3,18 @@ import { useNavigate } from "react-router";
 import { ChevronLeft } from "lucide-react";
 
 import { AppEnvironments } from "@/app/AppEnvironments";
-import { SButtonIcon, type SClassProps, SDiv, SImage, STypography } from "@/app/seung/design";
+import { SButtonIcon, SDiv, SImage, type SStyleProps, STypography } from "@/app/seung/dom";
 import { useSLayoutActions } from "@/app/seung/stores";
 
 export interface ConsoleSidebarHeaderProps {
-	styles?: SClassProps[];
+	styles?: SStyleProps;
 	collapsed?: boolean;
 }
 
 export const ConsoleSidebarHeader = (args: ConsoleSidebarHeaderProps) => {
 	const { styles = [], collapsed } = args;
 
-	const { sidebar_collapse } = useSLayoutActions();
+	const { sidebarCollapse } = useSLayoutActions();
 
 	const navigate = useNavigate();
 
@@ -24,19 +24,20 @@ export const ConsoleSidebarHeader = (args: ConsoleSidebarHeaderProps) => {
 
 	return (
 		<SDiv
+			className="console-sidebar-header-root"
 			styles={[
 				"s-height-header",
 				"shadow-lg",
 				"flex flex-row items-center justify-between",
-				...styles,
+				styles,
 			]}
 		>
 			<SDiv
-				styles={["pl-5", "flex flex-row items-center gap-2", "cursor-pointer"]}
+				styles={["pl-4", "flex flex-row items-center gap-2", "cursor-pointer"]}
 				onClick={go_dashboard}
 			>
 				<SImage
-					styles={["w-6 h-6"]}
+					styles={["w-5 h-5"]}
 					src="/seung-black.svg"
 					alt="Site Logo"
 				/>
@@ -50,10 +51,10 @@ export const ConsoleSidebarHeader = (args: ConsoleSidebarHeaderProps) => {
 			</SDiv>
 			<SDiv styles={["pr-4", "flex flex-col"]}>
 				<SButtonIcon
-					LucideIcon={ChevronLeft}
+					Icon={ChevronLeft}
 					hidden={collapsed}
 					onClick={() => {
-						sidebar_collapse();
+						sidebarCollapse();
 					}}
 				/>
 			</SDiv>

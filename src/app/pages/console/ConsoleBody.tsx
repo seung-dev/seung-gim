@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 
-import { SDiv } from "@/app/seung/design";
+import { SDiv } from "@/app/seung/dom";
 import { useSSidebar } from "@/app/seung/stores";
 
 import { ConsoleFooter } from "./ConsoleFooter";
@@ -20,14 +20,10 @@ export const ConsoleBody = () => {
 				"flex flex-col",
 			]}
 		>
-			<ConsoleHeader />
-			<SDiv
-				className="console-layout-main"
-				styles={["flex-1", "border-l border-gray-200"]}
-				component="main"
-			>
+			<ConsoleHeader styles={["bg-[var(--s-color-charcoal-600)]"]} />
+			<main className="console-layout-main flex-1">
 				<Outlet />
-			</SDiv>
+			</main>
 			<ConsoleFooter />
 		</SDiv>
 	);

@@ -8,18 +8,18 @@ interface SLayoutProps {
 
 interface SLayoutStoreProps extends SLayoutProps {
 	actions: {
-		sidebar_expand: () => void;
-		sidebar_collapse: () => void;
-		sidebar_close: () => void;
+		sidebarExpand: () => void;
+		sidebarCollapse: () => void;
+		sidebarClose: () => void;
 	};
 }
 
-export const useSLayoutStore = create<SLayoutStoreProps>()((set) => ({
+const useSLayoutStore = create<SLayoutStoreProps>()((set) => ({
 	sidebar: "expanded",
 	actions: {
-		sidebar_expand: () => set({ sidebar: "expanded" }),
-		sidebar_collapse: () => set({ sidebar: "collapsed" }),
-		sidebar_close: () => set({ sidebar: "closed" }),
+		sidebarExpand: () => set({ sidebar: "expanded" }),
+		sidebarCollapse: () => set({ sidebar: "collapsed" }),
+		sidebarClose: () => set({ sidebar: "closed" }),
 	},
 }));
 

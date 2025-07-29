@@ -1,9 +1,9 @@
 import { ChevronRight } from "lucide-react";
 
-import { type SClassProps, SDiv, SLucideIcon, STypography } from "@/app/seung/design";
+import { SDiv, SLucideIcon, type SStyleProps, STypography } from "@/app/seung/dom";
 
 interface ConsoleMainBreadcumbsProps {
-	styles?: SClassProps[];
+	styles?: SStyleProps;
 }
 
 export const ConsoleMainBreadcumbs = (args: ConsoleMainBreadcumbsProps) => {
@@ -28,7 +28,7 @@ export const ConsoleMainBreadcumbs = (args: ConsoleMainBreadcumbsProps) => {
 							<SLucideIcon
 								styles={["text-gray-400"]}
 								scale="sm"
-								LucideIcon={ChevronRight}
+								Icon={ChevronRight}
 							/>
 						)}
 						<STypography

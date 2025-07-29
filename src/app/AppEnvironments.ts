@@ -1,5 +1,5 @@
 import type { SEnvrionments, SLanguage } from "@/app/seung/core";
-import { type SStylesProps } from "@/app/seung/design";
+import type { SThemeProps } from "@/app/seung/dom";
 
 export const AppEnvironments: Readonly<SEnvrionments> = {
 	APP_NAME: import.meta.env.VITE_APP_NAME,
@@ -15,4 +15,12 @@ export const AppEnvironments: Readonly<SEnvrionments> = {
 	) as unknown as SLanguage[],
 } as const;
 
-export const AppStyles: Partial<SStylesProps> = { unit: 0.0625, height_header: 64 };
+export const AppTheme: Partial<SThemeProps> = {
+	unit: 0.0625,
+	height_header: 64,
+	colors: {
+		esgdadta: "#6f9a6f",
+		innon: "#5b6bc0",
+		charcoal: "#36454f",
+	},
+};

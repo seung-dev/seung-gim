@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
 
-import { SCard, SContainer, SDiv, STypography } from "@/app/seung/design";
+import { SCard, SContainer, SDiv, STypography } from "@/app/seung/dom";
 
 interface SignMainProps {
 	title?: string;
@@ -13,11 +13,7 @@ export const SignMain = (args: PropsWithChildren<SignMainProps>) => {
 	return (
 		<SContainer maxWidth="xs">
 			<SDiv styles={["h-dvh", "flex flex-col items-center justify-center"]}>
-				<SCard
-					styles={["pt-12 pr-8 pb-10 pl-8", "bg-white"]}
-					rounded="lg"
-					shadow="lg"
-				>
+				<SCard styles={["pt-12 pr-8 pb-10 pl-8"]}>
 					<SDiv styles={["flex flex-col items-center justify-center"]}>
 						<STypography
 							styles={["mb-12", "text-center"]}

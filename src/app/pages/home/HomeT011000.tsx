@@ -1,8 +1,5 @@
-import { useTranslation } from "react-i18next";
-
 import { Smile } from "lucide-react";
 
-import { clipboard } from "@/app/seung/core";
 import {
 	SCard,
 	SCodeBlock,
@@ -11,9 +8,8 @@ import {
 	SLucideIcon,
 	type SScaleProps,
 	STypography,
-	useSStyles,
-	useSToastActions,
-} from "@/app/seung/design";
+	useSTheme,
+} from "@/app/seung/dom";
 
 import { HomeSection, type HomeSectionProps } from "./HomeSection";
 
@@ -54,17 +50,7 @@ export const font_scales: SScaleProps[] = [
 ];
 
 export const HomeT011000 = (args: HomeSectionProps) => {
-	const { unit, ...styles } = useSStyles();
-
-	const { t } = useTranslation();
-
-	const { toast_open } = useSToastActions();
-
-	const copy = async (value: string) => {
-		await clipboard(value, () => {
-			toast_open(t("messages.copied"));
-		});
-	};
+	const { unit, ...styles } = useSTheme();
 
 	return (
 		<HomeSection {...args}>
@@ -80,9 +66,6 @@ export const HomeT011000 = (args: HomeSectionProps) => {
 					<SCodeBlock
 						dark
 						code={code}
-						onClick={async () => {
-							await copy(code);
-						}}
 					/>
 				</SDiv>
 				<SDiv>
@@ -93,7 +76,7 @@ export const HomeT011000 = (args: HomeSectionProps) => {
 					>
 						{"Font Locale & Weight"}
 					</STypography>
-					<SCard>
+					<SCard styles={["p-6"]}>
 						<SDiv styles={["flex flex-col gap-4"]}>
 							{font_locales.map((locale, i) =>
 								font_weight.map((weight, j) => (
@@ -143,7 +126,7 @@ export const HomeT011000 = (args: HomeSectionProps) => {
 					>
 						{"Font Scale"}
 					</STypography>
-					<SCard>
+					<SCard styles={["p-6"]}>
 						<SDiv styles={["flex flex-col gap-4"]}>
 							{font_scales.map((scale, i) => {
 								const rem = styles[`font_${scale}`];
@@ -168,7 +151,7 @@ export const HomeT011000 = (args: HomeSectionProps) => {
 											>
 												<SLucideIcon
 													scale={scale}
-													LucideIcon={Smile}
+													Icon={Smile}
 												/>
 												<STypography
 													scale={scale}

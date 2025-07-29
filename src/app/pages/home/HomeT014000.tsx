@@ -8,7 +8,7 @@ import {
 	SInput,
 	SSelect,
 	STypography,
-} from "@/app/seung/design";
+} from "@/app/seung/dom";
 
 import { HomeSection, type HomeSectionProps } from "./HomeSection";
 import { button_scales } from "./HomeT013000";
@@ -25,11 +25,7 @@ export const HomeT014000 = (args: HomeSectionProps) => {
 					>
 						{"Form"}
 					</STypography>
-					<SCard
-						styles={["bg-white"]}
-						rounded="lg"
-						shadow="xl"
-					>
+					<SCard styles={["p-6"]}>
 						<SDiv styles={["flex flex-col gap-2"]}>
 							{button_scales
 								.filter(
@@ -49,8 +45,11 @@ export const HomeT014000 = (args: HomeSectionProps) => {
 										]}
 									>
 										<SButton
-											contained="blue"
+											styles={[
+												"bg-blue-600 hover:bg-blue-700 s-color-white",
+											]}
 											scale={scale}
+											ellipsis
 											label={`s-button-${scale}`}
 										/>
 										<SInput
@@ -64,7 +63,7 @@ export const HomeT014000 = (args: HomeSectionProps) => {
 											options={[
 												{
 													value: "1",
-													label: "한국한국한국한국한국한국한국한국한국",
+													label: "한국",
 												},
 												{ value: "2", label: "중국" },
 												{ value: "3", label: "일본" },
@@ -85,11 +84,7 @@ export const HomeT014000 = (args: HomeSectionProps) => {
 					>
 						{"Input"}
 					</STypography>
-					<SCard
-						styles={["bg-white"]}
-						rounded="lg"
-						shadow="xl"
-					>
+					<SCard styles={["p-6"]}>
 						<SDiv styles={["flex flex-col gap-2"]}>
 							{button_scales
 								.filter(

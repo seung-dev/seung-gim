@@ -1,3 +1,5 @@
+import { Box, Boxes, LayoutDashboard } from "lucide-react";
+
 import { HomeError, HomeLayout, HomeT010000 } from "@/app/pages/home";
 import {
 	SignForgotPassword,
@@ -8,7 +10,22 @@ import {
 } from "@/app/pages/sign";
 import type { SRouteProps } from "@/app/seung/router";
 
-import { ConsoleLayout, Dashboard } from "./pages/console";
+import { ConsoleLayout } from "./pages/console";
+import {
+	ActionT010000,
+	ActionT011000,
+	ActionT012000,
+	ActionT013000,
+	ActionT020000,
+} from "./pages/console/action";
+import { BaseT010000, BaseT011000 } from "./pages/console/base";
+import { Dashboard } from "./pages/console/dashboard";
+import {
+	WidgetT010000,
+	WidgetT011000,
+	WidgetT012000,
+	WidgetT020000,
+} from "./pages/console/widget";
 
 export type AppLayout = "home" | "tenant" | "sign" | "console";
 
@@ -37,163 +54,91 @@ export const AppRoutes: SRouteProps<AppLayout>[] = [
 		layout: "console",
 		Component: ConsoleLayout,
 		children: [
-			{ path: "/console/dashboard", Component: Dashboard, label: "Dashboard" },
 			{
+				path: "/console/dashboard",
 				Component: Dashboard,
-				label: "기초데이터관리",
+				label: "Dashboard",
+				Icon: LayoutDashboard,
+			},
+			{
+				label: "Base",
+				Icon: Box,
 				children: [
 					{
-						label: "환경",
+						path: "/console/base/t010000",
+						Component: BaseT010000,
+						label: "Typography",
 					},
 					{
-						path: "/console/resources/t010000",
-						Component: Dashboard,
-						label: "폐기물처리",
-					},
-					{
-						path: "/console/resources/t011000",
-						Component: Dashboard,
-						label: "에너지",
-					},
-					{
-						path: "/console/resources/t012000",
-						Component: Dashboard,
-						label: "용수",
-					},
-					{
-						path: "/console/resources/t013000",
-						Component: Dashboard,
-						label: "폐수",
-					},
-					{
-						path: "/console/resources/t014000",
-						Component: Dashboard,
-						label: "대기",
-					},
-					{
-						path: "/console/resources/t014000",
-						Component: Dashboard,
-						label: "수질",
-					},
-					{
-						label: "사회",
-					},
-					{
-						path: "/console/resources/t020000",
-						Component: Dashboard,
-						label: "인사",
-					},
-					{
-						path: "/console/resources/t021000",
-						Component: Dashboard,
-						label: "안전",
-					},
-					{
-						label: "지배구조",
-					},
-					{
-						path: "/console/resources/t030000",
-						Component: Dashboard,
-						label: "재무상태표",
-					},
-					{
-						path: "/console/resources/t031000",
-						Component: Dashboard,
-						label: "손익계산서",
+						path: "/console/base/t011000",
+						Component: BaseT011000,
+						label: "Color",
 					},
 				],
 			},
 			{
-				Component: Dashboard,
-				label: "ESG지표관리",
+				label: "Action",
+				Icon: Boxes,
 				children: [
 					{
-						path: "/console/indicators/t010000",
-						Component: Dashboard,
-						label: "지표설정",
+						label: "Form",
+						subgroup: true,
 					},
 					{
-						path: "/console/indicators/t011000",
-						Component: Dashboard,
-						label: "지표입력",
+						path: "/console/action/t010000",
+						Component: ActionT010000,
+						label: "Input",
+						actionable: true,
 					},
 					{
-						path: "/console/indicators/t012000",
-						Component: Dashboard,
-						label: "지표조회",
+						path: "/console/action/t011000",
+						Component: ActionT011000,
+						label: "Checkbox",
+					},
+					{
+						path: "/console/action/t012000",
+						Component: ActionT012000,
+						label: "Radio",
+					},
+					{
+						path: "/console/action/t013000",
+						Component: ActionT013000,
+						label: "Select",
+					},
+					{
+						label: "Control",
+						subgroup: true,
+					},
+					{
+						path: "/console/action/t020000",
+						Component: ActionT020000,
+						label: "Button",
 					},
 				],
 			},
 			{
-				Component: Dashboard,
-				label: "공급망관리",
+				label: "Widget",
+				Icon: Box,
 				children: [
 					{
-						path: "/console/chains/t010000",
-						Component: Dashboard,
-						label: "원료",
+						path: "/console/widget/t010000",
+						Component: WidgetT010000,
+						label: "Toast",
 					},
 					{
-						path: "/console/chains/t011000",
-						Component: Dashboard,
-						label: "자재",
+						path: "/console/widget/t011000",
+						Component: WidgetT011000,
+						label: "Modal",
 					},
 					{
-						path: "/console/scchains/t012000",
-						Component: Dashboard,
-						label: "매입",
-					},
-				],
-			},
-			{
-				Component: Dashboard,
-				label: "게시판관리",
-				children: [
-					{
-						path: "/console/boards/t010000",
-						Component: Dashboard,
-						label: "공지사항",
-					},
-				],
-			},
-			{
-				Component: Dashboard,
-				label: "환경설정",
-				children: [
-					{
-						path: "/console/settings/t010000",
-						Component: Dashboard,
-						label: "기본설정",
+						path: "/console/widget/t012000",
+						Component: WidgetT012000,
+						label: "Drawer",
 					},
 					{
-						path: "/console/settings/t011000",
-						Component: Dashboard,
-						label: "코드관리",
-					},
-					{
-						path: "/console/settings/t012000",
-						Component: Dashboard,
-						label: "사업장관리",
-					},
-					{
-						path: "/console/settings/t013000",
-						Component: Dashboard,
-						label: "관리자관리",
-					},
-					{
-						path: "/console/settings/t014000",
-						Component: Dashboard,
-						label: "사용자관리",
-					},
-					{
-						path: "/console/settings/t015000",
-						Component: Dashboard,
-						label: "권한그룹관리",
-					},
-					{
-						path: "/console/settings/t016000",
-						Component: Dashboard,
-						label: "로그관리",
+						path: "/console/widget/t020000",
+						Component: WidgetT020000,
+						label: "Table",
 					},
 				],
 			},

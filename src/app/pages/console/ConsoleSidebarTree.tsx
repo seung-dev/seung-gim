@@ -1,81 +1,51 @@
-import { SimpleTreeView, TreeItem } from "@mui/x-tree-view";
+import { useNavigate } from "react-router";
 
-import { type SClassProps, SDiv } from "@/app/seung/design";
+import { Settings } from "lucide-react";
+
+import { AppRoutes } from "@/app/AppRoutes";
+import { SDiv, SSidebar, type SStyleProps, useSModalActions } from "@/app/seung/dom";
+import type { SRouteProps } from "@/app/seung/router";
+import { useSLayoutActions, useSSidebar } from "@/app/seung/stores";
 
 interface ConsoleSidebarTreeProps {
-	styles?: SClassProps[];
+	styles?: SStyleProps;
 }
 
 export const ConsoleSidebarTree = (args: ConsoleSidebarTreeProps) => {
-	const { styles = [] } = args;
+	const { styles } = args;
+
+	const sidebar = useSSidebar();
+
+	const { sidebarExpand } = useSLayoutActions();
+
+	const navigate = useNavigate();
+
+	const handleNavigate = async (value: SRouteProps) => {
+		if (value.path) {
+			await navigate(value.path);
+		}
+	};
+
+	const { modalOpen } = useSModalActions();
+
+	const handleAction = (value: SRouteProps) => {
+		if (value.path) {
+			modalOpen({ view: <SDiv styles={["p-10"]}>{value.path}</SDiv> });
+		}
+	};
+
+	const items = AppRoutes.find((route) => route.layout === "console")?.children ?? [];
 
 	return (
-		<SDiv
-			styles={[
-				"console-sidebar-tree-root",
-				"flex flex-col gap-2",
-				"border-r border-gray-200",
-				...styles,
-			]}
-		>
-			<SimpleTreeView>
-				<TreeItem
-					itemId="1"
-					label="Applications"
-				>
-					<TreeItem
-						itemId="1-1"
-						label="Calendar"
-					>
-						<TreeItem
-							itemId="1-1-1"
-							label="Calendar111"
-						/>
-						<TreeItem
-							itemId="1-1-2"
-							label="Calendar112"
-						/>
-					</TreeItem>
-					<TreeItem
-						itemId="1-2"
-						label="Chrome"
-					/>
-					<TreeItem
-						itemId="1-3"
-						label="Webstorm"
-					/>
-				</TreeItem>
-				<TreeItem
-					itemId="2"
-					label="Applications2"
-				>
-					<TreeItem
-						itemId="2-1"
-						label="Calendar2"
-					>
-						<TreeItem
-							itemId="2-1-1"
-							label="Calendar211"
-						/>
-						<TreeItem
-							itemId="2-1-2"
-							label="Calendar212"
-						/>
-					</TreeItem>
-					<TreeItem
-						itemId="2-2"
-						label="Chrome2"
-					/>
-					<TreeItem
-						itemId="2-3"
-						label="Webstorm2"
-					/>
-				</TreeItem>
-			</SimpleTreeView>
-		</SDiv>
+		<SSidebar
+			className="console-sidebar-tree-root"
+			styles={styles}
+			ActionIcon={Settings}
+			items={items}
+			collapsed={sidebar === "collapsed"}
+			expand={sidebarExpand}
+			navigate={handleNavigate}
+			action={handleAction}
+		/>
 	);
-};
-
-export const ConsoleSidebarTreeItem = () => {
-	return <div></div>;
 };

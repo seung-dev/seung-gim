@@ -1,4 +1,4 @@
-import { SDiv } from "@/app/seung/design";
+import { SDiv } from "@/app/seung/dom";
 
 import { HomeT011000 } from "./HomeT011000";
 import { HomeT012000 } from "./HomeT012000";
